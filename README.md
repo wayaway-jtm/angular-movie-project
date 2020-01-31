@@ -7,12 +7,12 @@
 3. Allow users to select individual movies to see more details.
 4. Allow users to mark moves from the results for a watchlist.
 5. Include a separate route where users can
-a. See a list of movies they’ve marked for the watchlist
-b. Select individual movies to see more details
-c. Remove items from the watchlist
+    1. See a list of movies they’ve marked for the watchlist
+    1. Select individual movies to see more details
+    1. Remove items from the watchlist
 6. Do not implement log in. Built as if a user is already logged in.
 7. Use at least three components:
-a. searchCriteria the criteria selection
-b. movieList for the list of results
-c. watchlistPage for the watchlist route
+    1. searchCriteria the criteria selection
+    1. movieList for the list of results
+    1. watchlistPage for the watchlist route
 8. Must have a good user experience on desktop browsers. Mobile styling is not required.
