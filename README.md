@@ -1,27 +1,18 @@
-# AngularMovieProject
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# ANGULAR PROJECT: MOVIE OPTION
+## Task: Use The Movie DB API to build an Angular app for searching and saving movies.
+## API: https://www.themoviedb.org/documentation/api
+### Build Specifications
+1. Allow users to filter movies based on at least three criteria (e.g.: rating, genre, length).
+2. Display movies that match the user’s selected criteria.
+3. Allow users to select individual movies to see more details.
+4. Allow users to mark moves from the results for a watchlist.
+5. Include a separate route where users can
+a. See a list of movies they’ve marked for the watchlist
+b. Select individual movies to see more details
+c. Remove items from the watchlist
+6. Do not implement log in. Built as if a user is already logged in.
+7. Use at least three components:
+a. searchCriteria the criteria selection
+b. movieList for the list of results
+c. watchlistPage for the watchlist route
+8. Must have a good user experience on desktop browsers. Mobile styling is not required.
