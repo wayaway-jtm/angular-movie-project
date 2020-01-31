@@ -1,6 +1,6 @@
 # ANGULAR PROJECT: MOVIE OPTION
 ## Task: Use The Movie DB API to build an Angular app for searching and saving movies.
-## API: https://www.themoviedb.org/documentation/api
+ API: https://www.themoviedb.org/documentation/api
 ### Build Specifications
 1. Allow users to filter movies based on at least three criteria (e.g.: rating, genre, length).
 2. Display movies that match the user’s selected criteria.
