@@ -24,7 +24,7 @@ export class MovieAPIService {
     return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`);
   }
 
-  searchMovieByID(movieID: number) {
+  searchMovieDetails(movieID: number) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${this.apiKey}&language=en-US`);
   }
 
