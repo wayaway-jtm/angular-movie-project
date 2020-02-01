@@ -8,6 +8,8 @@ export interface IMovieInfo {
         releaseDate: string;
         rating: string; // Is this supposed to be popularity or vote_average?
         genreIDs: number[];
-        length: string;
+        // length: string; API doesn't include movie length.
+        //                  We'd have to implement IMDB or some
+        //                  other API for that.
     }
 }
