@@ -19,6 +19,6 @@ export class MovieAPIService {
 
   searchMovieByName(movieName: string) {
     // Returns English non-adult movies matching the given string
-    return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=en-US&page=1&include_adult=false`);
+    return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`);
   }
 }
