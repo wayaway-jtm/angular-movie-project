@@ -2,12 +2,20 @@ li {
     list-style-type: none;
 }
 
+p {
+    max-width: 30vw
+}
+
 #details p {
     margin: 0;
 }
 
 #wrapper {
     display: flex;
+}
+
+#movie-info {
+    padding-right: 5vw;
 }
 
 .info-header {
