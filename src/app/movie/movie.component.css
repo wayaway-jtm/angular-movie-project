@@ -1,0 +1,15 @@
+li {
+    list-style-type: none;
+}
+
+#details p {
+    margin: 0;
+}
+
+#wrapper {
+    display: flex;
+}
+
+.info-header {
+    font-weight: bold;
+}

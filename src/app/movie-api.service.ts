@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { stringify } from 'querystring';
 
 
 @Injectable({
@@ -33,6 +34,10 @@ export class MovieAPIService {
     if (!(width < 0 || width > (this.poster_sizes.length - 1))) {
       return this.http.get(`${this.imgQueryBase}/w${width}${imgURL}`)
     }
+  }
+
+  getPosterSrc(imgUrl: string, width: number = 3) {
+    return String(`${this.imgQueryBase}/${this.poster_sizes[width]}${imgUrl}`);
   }
 
   getMovieGenreName(genreID: number) {
