@@ -1,23 +1,40 @@
-li {
-    list-style-type: none;
-}
-
-p {
-    max-width: 30vw
-}
-
-#details p {
-    margin: 0;
-}
-
 #wrapper {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid gray;
+    padding: 10px;
+    box-shadow: 3px 4px rgb(100, 100, 100);
 }
 
 #movie-info {
-    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+    width: 60vw;
+    font-size: small;
 }
-
+#details {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+p {
+    margin: 3px;
+    padding: 2px;
+}
+h1 {
+    margin: 3px;
+}
 .info-header {
-    font-weight: bold;
+    background-color: rgb(202, 202, 202);
+    border-radius: 5px;
+    width: fit-content;
+}
+img {
+    height: 235px;
+}
+li {
+    list-style-type: none;
 }
