@@ -1,13 +1,18 @@
-<!-- 
- testing the API call in the console
--->
-
-
 <header>
-    <button (click)="callMovies()">API TEST</button>
-  </header>
-  <main>
-    <!-- <div>
-      <h4>{{ data }}</h4>
-    </div> -->
-  </main>
+  <ul>
+    <li class="search-bar"><search-criteria></search-criteria></li>
+    <li>
+      <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+    </li>
+    <li>
+      <a
+        [routerLink]="['/watchlist-page']"
+        routerLinkActive="router-link-active"
+        >Watchlist</a
+      >
+    </li>
+  </ul>
+</header>
+<main>
+  <movie-list></movie-list>
+</main>
