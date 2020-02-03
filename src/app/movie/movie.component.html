@@ -1,15 +1,15 @@
 <div id="wrapper">
   <div id="movie-info">
     <h1>{{title}}</h1>
-    <p><span class="info-header">Description</span>: {{overview}}</p>
-    <section id="details">
+        <section id="details">
       <p><span class="info-header">Release Date:</span> {{releaseDate}}</p>
       <p><span class="info-header">Rating:</span> {{rating}}</p>
-      <p><span class="info-header">Runtime:</span> {{length}}</p>
+      <p><span class="info-header">Runtime:</span> {{length}} minutes</p>
       <p>
         <span class="info-header">Genres: </span> <span *ngFor="let genre of genreIDs">{{genre.name}} </span>
       </p>
     </section>
+    <p><span class="info-header">Description</span>: {{overview}}</p>
   </div>
   <img src='{{posterPath}}' alt="">
 </div>
