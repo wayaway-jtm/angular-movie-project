@@ -2,3 +2,7 @@ li {
     list-style-type: none;
     padding-bottom: 15px;
 }
+
+ul {
+    padding: 0;
+}
