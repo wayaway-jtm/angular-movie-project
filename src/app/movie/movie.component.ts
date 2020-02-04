@@ -8,7 +8,7 @@ import { Movie } from './movie.class';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent implements OnInit, IMovieInfo {
+export class MovieComponent implements OnInit {
   title: string;
   id: number;
   posterPath: string;
@@ -30,6 +30,8 @@ export class MovieComponent implements OnInit, IMovieInfo {
     this.rating = this.srcMovie.rating;
     this.genreIDs = this.srcMovie.genreIDs;
     this.length = this.srcMovie.length;
+
+    console.log(this.srcMovie);
   }
 
 }

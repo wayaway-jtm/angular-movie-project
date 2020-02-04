@@ -20,6 +20,14 @@ export class MovieListComponent implements OnInit {
       }
     });
     // this.movieList.push(newMovie);
+
+    this.movieApiService.getNowPlayingMovies().subscribe((data: any) => {
+      for (const movie of data.results) {
+        this.movieList.push(new Movie(movie));
+      }});
+    
+
+
   }
 
 }

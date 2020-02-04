@@ -17,7 +17,7 @@ export class MovieAPIService {
 
   // calls movie api
   fetchMovieApi() {
-    return this.http.get(`https://api.themoviedb.org/3/movie/550?api_key=${this.apiKey}`);
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}&sort_by=release_date.desc`);
   }
 
   searchMovieByName(movieName: string) {
@@ -48,5 +48,10 @@ export class MovieAPIService {
     let genreContainer: any = this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=56e67f6023e668760235d525751be987&language=en-US');
     let genreList: any[] = genreContainer.genres;
     return genreList.find(x => x.id === genreID);
+  }
+
+  getNowPlayingMovies() {
+    // returns movies that are now playing
+    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`);
   }
 }
