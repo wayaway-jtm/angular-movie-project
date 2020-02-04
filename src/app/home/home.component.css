@@ -6,3 +6,24 @@ button {
     width: 200px;
     height: 100px;
 }
+header {
+    width: 100%;
+}
+main {
+    width: 80%;
+    margin: auto;
+}
+ul {
+    display: flex;
+    justify-content: center;   
+    align-items: center; 
+}
+li {
+    list-style-type: none;
+    color: black;
+    margin: 5px;
+}
+.search-bar {
+    width: 100%;
+    flex: 1;
+}
