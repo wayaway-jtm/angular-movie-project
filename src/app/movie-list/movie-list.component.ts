@@ -14,8 +14,8 @@ export class MovieListComponent implements OnInit {
   constructor(private movieApiService: MovieAPIService) { }
 
   ngOnInit() {
-    this.movieApiService.searchMovieDetails(8681).subscribe((data: any) => this.movieList.push(new Movie(data)));
-    // this.movieList.push(newMovie);
+    let newMovie = this.movieApiService.searchMovieByname(86813).subscribe((data: any) => this.movieList.push(new Movie(data)));
+    this.movieList.push();
   }
 
 }

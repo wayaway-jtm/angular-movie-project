@@ -17,7 +17,7 @@ export class MovieAPIService {
 
   // calls movie api
   fetchMovieApi() {
-    return this.http.get(`https://api.themoviedb.org/3/movie/550?api_key=${this.apiKey}`);
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}&sort_by=release_date.desc`);
   }
 
   searchMovieByName(movieName: string) {
