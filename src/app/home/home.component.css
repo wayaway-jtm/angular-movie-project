@@ -27,3 +27,9 @@ li {
     width: 100%;
     flex: 1;
 }
+
+@media (min-width: 720px) {
+    main {
+        width: 80vw;
+    }
+}
