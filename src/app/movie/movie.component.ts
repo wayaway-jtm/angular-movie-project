@@ -8,14 +8,15 @@ import { Movie } from './movie.class';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent implements OnInit, IMovieInfo {
+export class MovieComponent implements OnInit {
   title: string;
   id: number;
   posterPath: string;
   overview: string;
   releaseDate: string;
   rating: string;
-  genreIDs: number[];
+  genreIDs: number[] = [];
+  genreNames: string[] = [];
   length: string;
   @Input() srcMovie: Movie;
 
@@ -37,7 +38,10 @@ export class MovieComponent implements OnInit, IMovieInfo {
     this.releaseDate = this.srcMovie.releaseDate;
     this.rating = this.srcMovie.rating;
     this.genreIDs = this.srcMovie.genreIDs;
-    this.length = this.srcMovie.length;
+    for (const genre of this.genreIDs) {
+      this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
+    }
+    this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
   }
 
 }
