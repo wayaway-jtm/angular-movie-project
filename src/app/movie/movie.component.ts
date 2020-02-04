@@ -15,7 +15,8 @@ export class MovieComponent implements OnInit {
   overview: string;
   releaseDate: string;
   rating: string;
-  genreIDs: number[];
+  genreIDs: number[] = [];
+  genreNames: string[] = [];
   length: string;
   @Input() srcMovie: Movie;
 
@@ -30,8 +31,9 @@ export class MovieComponent implements OnInit {
     this.rating = this.srcMovie.rating;
     this.genreIDs = this.srcMovie.genreIDs;
     this.length = this.srcMovie.length;
-
-    console.log(this.srcMovie);
+    for (const genre of this.genreIDs) {
+      this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
+    }
   }
 
 }
