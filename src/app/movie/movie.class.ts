@@ -1,4 +1,5 @@
 import { IMovieInfo } from '../imovie-info';
+import { MovieAPIService } from '../movie-api.service';
 
 export class Movie implements IMovieInfo {
     title: string;
@@ -18,6 +19,5 @@ export class Movie implements IMovieInfo {
         this.releaseDate = srcMovie.release_date;
         this.rating = srcMovie.vote_average;
         this.genreIDs = srcMovie.genre_ids;
-        this.length = srcMovie.runtime;
     }
 }
