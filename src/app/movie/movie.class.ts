@@ -17,7 +17,7 @@ export class Movie implements IMovieInfo {
         this.overview = srcMovie.overview;
         this.releaseDate = srcMovie.release_date;
         this.rating = srcMovie.vote_average;
-        this.genreIDs = srcMovie.genres;
+        this.genreIDs = srcMovie.genre_ids;
         this.length = srcMovie.runtime;
     }
 }
