@@ -29,10 +29,6 @@ export class MovieAPIService {
     return this.http.get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${this.apiKey}&language=en-US`);
   }
 
-  getNowPlayingMovies() {
-    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`);
-  }
-
   getPosterImg(imgURL: string, width: number = 3) {
     // Filtering out invalid width numbers
     if (!(width < 0 || width > (this.poster_sizes.length - 1))) {
