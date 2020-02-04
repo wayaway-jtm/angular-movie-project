@@ -45,4 +45,9 @@ export class MovieAPIService {
     let genreList: any[] = genreContainer.genres;
     return genreList.find(x => x.id === genreID);
   }
+
+  getNowPlayingMovies() {
+    // returns movies that are now playing
+    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`);
+  }
 }

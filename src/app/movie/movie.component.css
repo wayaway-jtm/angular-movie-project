@@ -4,7 +4,9 @@
     align-items: center;
     border: 3px solid gray;
     padding: 10px;
+    font-family: Helvetica;
     box-shadow: 6px 7px rgb(194, 194, 194);
+    background-color: lightgoldenrodyellow;
 }
 
 #movie-info {
@@ -26,12 +28,37 @@ p {
 }
 h1 {
     margin: 3px;
+    color: rgb(19,108,178);
+
 }
 .info-header {
     background-color: rgb(202, 202, 202);
     border-radius: 5px;
     width: fit-content;
 }
+
+p span {
+    font-weight: bold;
+
+}
+
+section p {
+    color: rgb(19,108,178);
+    
+}
+
+section p span{
+    color: black;
+    font-weight: bold;
+}
+
+#genreColor {
+    color: rgb(19,108,178);
+}
+p {
+    color: rgb(112, 112, 112);
+}
+
 img {
     height: 235px;
 }
