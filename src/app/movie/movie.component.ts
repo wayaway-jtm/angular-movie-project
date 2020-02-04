@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { IMovieInfo } from '../imovie-info';
 import { MovieAPIService } from '../movie-api.service';
 import { Movie } from './movie.class';
@@ -18,6 +18,14 @@ export class MovieComponent implements OnInit, IMovieInfo {
   genreIDs: number[];
   length: string;
   @Input() srcMovie: Movie;
+
+  @Output() newWatchlist = new EventEmitter();
+
+  addToWatchlist(){
+    console.log("You added to your Watchlist");
+    this.newWatchlist.emit();
+
+  }
 
   constructor(private movieApiService: MovieAPIService) { }
 

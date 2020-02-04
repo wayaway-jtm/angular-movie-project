@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'watchlist-page',
@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class WatchlistPageComponent implements OnInit {
 
   constructor() { }
+  // @Input() newWatchlist
 
+  newWatchlistMovie(evt){
+    console.log(evt);
+  }
   ngOnInit() {
   }
 
