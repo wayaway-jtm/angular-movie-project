@@ -30,10 +30,10 @@ export class MovieComponent implements OnInit {
     this.releaseDate = this.srcMovie.releaseDate;
     this.rating = this.srcMovie.rating;
     this.genreIDs = this.srcMovie.genreIDs;
-    this.length = this.srcMovie.length;
     for (const genre of this.genreIDs) {
       this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
     }
+    this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
   }
 
 }
