@@ -30,8 +30,6 @@ export class MovieComponent implements OnInit {
     this.rating = this.srcMovie.rating;
     this.genreIDs = this.srcMovie.genreIDs;
     this.length = this.srcMovie.length;
-
-    console.log(this.srcMovie);
   }
 
 }
