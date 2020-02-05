@@ -14,9 +14,12 @@ export class SearchCriteriaComponent implements OnInit {
   ngOnInit() {
   }
 
-  filterButton() {
+  openSide() {
     this.dropDown = true;
     console.log("Hello World")
+  }
+  closeSide() {
+    this.dropDown = false;
   }
 
 }

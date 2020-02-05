@@ -16,17 +16,20 @@ button {
   display: flex;
   flex-direction: column;
 }
-
-/* .dropdownContents {
-  display: flex;
-  justify-content: flex-start;
-  position: absolute;
-  border: 1px solid black;
+.closeButton {
+  align-self: flex-end;
+  position: fixed;
+  top: 3%;
+  left: 32%;
+}
+.xBtn {
+  border: 0px;
+  font-size: 2rem;
   background-color: white;
-  list-style: none;
-  height: 60%;
-  width: 40%;
-} */
+  opacity: 0.9;
+  color: #E84F4F;
+}
+
 ul {
   padding-left: 0;
 }
@@ -49,7 +52,7 @@ li {
 
 /* The sidebar menu */
 .sidenav {
-  height: 80%; /* Full-height: remove this if you want "auto" height */
+  height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 255px; /* Set the width of the sidebar */
   padding-left: 20px;
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
@@ -59,8 +62,6 @@ li {
   background-color: white; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: hidden;
-  padding-top: 20px;
-  opacity: 0.9;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -95,4 +96,30 @@ li {
   .sidenav a {
     font-size: 18px;
   }
+}
+
+/* Star rating CSS */
+.star-rating {
+  border: solid 1px #ccc;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1.5em;
+  justify-content: space-around;
+  padding: 0 0.2em;
+  text-align: center;
+  width: 5em;
+}
+.star-rating input {
+  display: none;
+}
+.star-rating label {
+  color: #ccc;
+  cursor: pointer;
+}
+.star-rating :checked ~ label {
+  color: #f90;
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #fc0;
 }
