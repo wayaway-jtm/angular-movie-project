@@ -4,6 +4,9 @@
     <img src="{{ posterPath }}" alt="" />
     <p class="info-header">
       <span class="star">&#9733;</span> {{ rating }}
+      <button name="newWatchlist" (click)="toggleSaved(id)" type="button">
+        <img class="saved-icon" [ngClass]="isSaved() ? 'saved' : 'not-saved'" alt="">
+      </button>
     </p>
     <!-- <p><span>Description</span>: {{ overview }}</p> -->
     <!-- <section id="details">
