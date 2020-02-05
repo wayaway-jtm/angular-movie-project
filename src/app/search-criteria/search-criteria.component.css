@@ -21,7 +21,7 @@ button {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
   border: 1px solid black;
   background-color: rgb(179, 179, 179);
   list-style: none;
