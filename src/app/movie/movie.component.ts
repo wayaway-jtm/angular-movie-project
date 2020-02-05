@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { IMovieInfo } from '../imovie-info';
 import { MovieAPIService } from '../movie-api.service';
 import { Movie } from './movie.class';
+import { WatchlistService } from '../watchlist.service';
 
 @Component({
   selector: 'app-movie',
@@ -20,15 +21,13 @@ export class MovieComponent implements OnInit {
   length: string;
   @Input() srcMovie: Movie;
 
-  @Output() newWatchlist = new EventEmitter();
 
-  addToWatchlist(){
-    console.log("You added to your Watchlist");
-    this.newWatchlist.emit();
+  addToWatchlist(movieId : number){
+    this.watchlistService.addMovie(movieId);
 
   }
 
-  constructor(private movieApiService: MovieAPIService) { }
+  constructor(private movieApiService: MovieAPIService, private watchlistService : WatchlistService) { }
 
   ngOnInit() {
     this.title = this.srcMovie.title;

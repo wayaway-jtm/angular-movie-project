@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { WatchlistService } from '../watchlist.service';
 
 @Component({
   selector: 'watchlist-page',
@@ -7,13 +8,10 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class WatchlistPageComponent implements OnInit {
 
-  constructor() { }
-  // @Input() newWatchlist
+  constructor(private watchlistService : WatchlistService) { }
 
-  newWatchlistMovie(evt){
-    console.log(evt);
-  }
   ngOnInit() {
+    
   }
 
 }
