@@ -12,7 +12,14 @@ export class WatchlistService {
 
   addMovie(movieId: number) {
     this.movieApiService.searchMovieDetails(movieId).subscribe(
-      (data: any) => this.savedMovies.push(new Movie(data.results))
+      (data: any) => {
+        console.log(data);
+        this.savedMovies.push(new Movie(data));
+      }
     )
-  };
+  }
+
+  getSavedMovies() {
+    return this.savedMovies;
+  }
 }

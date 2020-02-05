@@ -1,18 +1,16 @@
 <header>
   <ul>
-    <li class="search-bar"><search-criteria></search-criteria></li>
+    <li class="search-bar">
+      <search-criteria></search-criteria>
+    </li>
     <li>
       <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
     </li>
     <li>
-      <a
-        [routerLink]="['/watchlist-page']"
-        routerLinkActive="router-link-active"
-        >Watchlist</a
-      >
+      <a [routerLink]="['/watchlist-page']" routerLinkActive="router-link-active">Watchlist</a>
     </li>
   </ul>
 </header>
 <main>
-  <movie-list></movie-list>
+  <movie-list [movieList]='movies'></movie-list>
 </main>

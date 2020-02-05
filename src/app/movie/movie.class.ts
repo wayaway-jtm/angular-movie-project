@@ -1,5 +1,6 @@
 import { IMovieInfo } from '../imovie-info';
 import { MovieAPIService } from '../movie-api.service';
+import { isUndefined } from 'util';
 
 export class Movie implements IMovieInfo {
     title: string;
@@ -8,8 +9,7 @@ export class Movie implements IMovieInfo {
     overview: string;
     releaseDate: string;
     rating: string;
-    genreIDs: number[];
-    genre_ids: number[];
+    genreIDs: number[] = [];
     length: string;
 
     constructor(srcMovie: any) {
@@ -19,7 +19,12 @@ export class Movie implements IMovieInfo {
         this.overview = srcMovie.overview;
         this.releaseDate = srcMovie.release_date;
         this.rating = srcMovie.vote_average;
-        this.genreIDs = srcMovie.genre_ids;
-        this.genre_ids = srcMovie.genre_ids;
+        if(isUndefined(srcMovie.genre_ids)) {
+            for (const genre of srcMovie.genres) {
+                this.genreIDs.push(genre.id);
+            }
+        } else {
+            this.genreIDs = srcMovie.genre_ids;
+        }
     }
 }
