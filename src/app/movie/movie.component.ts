@@ -23,14 +23,6 @@ export class MovieComponent implements OnInit {
 
 
   isSaved() {
-    // THIS WORKS
-    // let rvar = false;
-    // this.watchlistService.getSavedMovies().forEach(m => {
-    //   if (m.id === this.id) {
-    //     rvar = true;
-    //   }
-    // });
-    // return rvar;
     return this.watchlistService.hasMovieId(this.id);
   }
 
