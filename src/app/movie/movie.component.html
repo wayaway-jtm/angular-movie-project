@@ -1,10 +1,10 @@
 <div id="wrapper">
   <div id="movie-info">
     <h1>{{ title }}</h1>
-    <img src="{{ posterPath }}" alt="" />
+    <img id="movie-poster" src="{{ posterPath }}" alt="" />
     <p class="info-header">
       <span class="star">&#9733;</span> {{ rating }}
-      <button name="newWatchlist" (click)="toggleSaved(id)" type="button">
+      <button id="newWatchlist" (click)="toggleSaved(id)" type="button">
         <img class="saved-icon" [ngClass]="isSaved() ? 'saved' : 'not-saved'" alt="">
       </button>
     </p>
