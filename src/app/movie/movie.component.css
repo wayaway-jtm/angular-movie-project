@@ -1,10 +1,9 @@
+
 #wrapper {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    border: 3px solid gray;
-    padding: 10px;
     font-family: Helvetica;
     box-shadow: 6px 7px rgb(194, 194, 194);
     background-color: lightgoldenrodyellow;
@@ -33,56 +32,63 @@ button {
 }
 
 #movie-info {
-    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: fit-content;
-    font-size: small;
+    align-items: center;
+    /* border: 3px solid gray;
+    box-shadow: 6px 7px rgb(194, 194, 194);
+    background-color: rgb(168, 214, 243); */
+
+
 }
-#details {
+/* #details {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-}
+} */
 p {
     margin: 3px;
     padding: 2px;
 }
 h1 {
-    margin: 3px;
+    justify-content: center;
     color: rgb(19,108,178);
-
-}
-.info-header {
-    background-color: rgb(202, 202, 202);
-    border-radius: 5px;
-    width: fit-content;
-}
-
-p span {
-    font-weight: bold;
-
-}
-
-section p {
-    color: rgb(19,108,178);
+    font-size: 1rem;
     
 }
 
+/* p span {
+    font-weight: bold;
+
+} */
+
+/* section p {
+    color: rgb(19,108,178);
+    
+} */
+/* 
 section p span{
     color: black;
     font-weight: bold;
-}
-
+} */
+/* 
 #genreColor {
     color: rgb(19,108,178);
-}
+} */
 p {
+    display: flex;
+    justify-content: center;
     color: rgb(112, 112, 112);
+
+}
+
+.star {
+    color: gold;
+    padding-right: 5px;
 }
 
 img {
-    height: 235px;
+    width: 60%;
+    height: auto;
 }
 li {
     list-style-type: none;
@@ -94,8 +100,8 @@ li {
         justify-content: flex-start;
     }
 
-    #movie-info {
+    /* #movie-info {
         padding-left: 0.5vw;
         max-width: 60vw;
-    }
+    } */
 }
