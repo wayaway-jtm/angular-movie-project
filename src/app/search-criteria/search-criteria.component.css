@@ -1,6 +1,38 @@
 input {
-    border: 1px solid black;
-    height: 2rem;
-    width: -webkit-fill-available;
-    padding-left: 0.5vw;
+  border: 1px solid black;
+  height: 2rem;
+  width: -webkit-fill-available;
+  padding-left: 0.5vw;
+}
+.searchBar {
+  display: flex;
+}
+button {
+  height: 36px;
+  width: 70px;
+  border: 1px solid black;
+}
+.buttonFilter {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdownContents {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: fixed;
+  border: 1px solid black;
+  background-color: rgb(179, 179, 179);
+  list-style: none;
+  height: 60%;
+  width: 40%;
+}
+li {
+    list-style-type: none;
+}
+.genreTypes {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

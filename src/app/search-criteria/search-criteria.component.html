@@ -1,1 +1,19 @@
-<input type="text" placeholder="Movie Title">
+<div class="searchBar">
+  <div class="buttonFilter">
+    <button (click)="filterButton()">Filter</button>
+    <div *ngIf="dropDown">
+      <ul class="dropdownContents">
+        <li>
+          <h4>Genre</h4>
+          <input type="checkbox" />Action <input type="checkbox" />Thriller
+          <input type="checkbox" />Comedy <input type="checkbox" />Drama
+        </li>
+        <li>
+          <h4>Rating</h4>
+        </li>
+        <li>Release Date</li>
+      </ul>
+    </div>
+  </div>
+  <input type="text" placeholder="Movie Title" />
+</div>
