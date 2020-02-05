@@ -2,6 +2,7 @@
 import { MovieAPIService } from "../movie-api.service";
 import { Component, OnInit } from "@angular/core";
 import { IMovieInfo } from "../imovie-info";
+import { Movie } from '../movie/movie.class';
 
 @Component({
   selector: "app-home",
@@ -10,11 +11,17 @@ import { IMovieInfo } from "../imovie-info";
 })
 export class HomeComponent implements OnInit {
 
-  movies: IMovieInfo[];
+  movies: Movie[] = [];
 
   constructor(private movieApiService: MovieAPIService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.movieApiService.getNowPlayingMovies().subscribe((data: any) => {
+      for (const movie of data.results) {
+        this.movies.push(new Movie(movie));
+      }
+    })
+  }
 
   // calls the movie api from movie-api service
   callMovies() {

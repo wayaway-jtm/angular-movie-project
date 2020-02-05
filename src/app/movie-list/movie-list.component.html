@@ -1,5 +1,5 @@
-<ul>
-    <li *ngFor="let movie of movieList">
-        <app-movie [srcMovie]="movie"></app-movie>
-    </li>
-</ul>
+    <ul class="grid-layout">
+        <li *ngFor="let movie of movieList" class="grid-item">
+            <app-movie [srcMovie]="movie"></app-movie>
+        </li>
+    </ul>
