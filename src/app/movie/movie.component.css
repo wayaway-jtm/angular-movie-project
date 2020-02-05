@@ -62,10 +62,6 @@ p {
     height: auto;
 }
 
-li {
-    list-style-type: none;
-}
-
 @media (min-width: 720px) {
     #wrapper {
         flex-direction: row;
