@@ -44,15 +44,6 @@ button {
     justify-content: flex-start;
     flex-direction: column;
 } */
-p {
-    margin: 3px;
-    padding: 2px;
-    display: flex;
-}
-
-#newWatchlist {
-    align-self: flex-end;
-}
 
 h1 {
     justify-content: center;
@@ -83,7 +74,8 @@ p {
     display: flex;
     justify-content: center;
     color: rgb(112, 112, 112);
-
+    margin: 3px;
+    padding: 2px;
 }
 
 .star {
