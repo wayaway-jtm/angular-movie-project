@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { IMovieInfo } from '../imovie-info';
 import { MovieAPIService } from '../movie-api.service';
 import { Movie } from './movie.class';
@@ -22,12 +22,28 @@ export class MovieComponent implements OnInit {
   @Input() srcMovie: Movie;
 
 
-  addToWatchlist(movieId : number){
-    this.watchlistService.addMovie(movieId);
+  isSaved() {
+    // THIS WORKS
+    // let rvar = false;
+    // this.watchlistService.getSavedMovies().forEach(m => {
+    //   if (m.id === this.id) {
+    //     rvar = true;
+    //   }
+    // });
+    // return rvar;
+    return this.watchlistService.hasMovieId(this.id);
+  }
+
+  toggleSaved(movieId: number) {
+    if (!this.watchlistService.hasMovieId(movieId)) {
+      this.watchlistService.addMovie(movieId);
+    } else {
+      this.watchlistService.removeMovie(movieId);
+    }
 
   }
 
-  constructor(private movieApiService: MovieAPIService, private watchlistService : WatchlistService) { }
+  constructor(private movieApiService: MovieAPIService, private watchlistService: WatchlistService) { }
 
   ngOnInit() {
     this.title = this.srcMovie.title;

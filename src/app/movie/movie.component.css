@@ -9,13 +9,28 @@
     box-shadow: 6px 7px rgb(194, 194, 194);
     background-color: lightgoldenrodyellow;
 }
-.star{
-    border: none;
-    width: 50px;
-    height: 50px;
-    display: flex; 
-    align-self: flex-end;
+
+.saved {
+    content: url('../../assets/saved.png');
 }
+
+.not-saved {
+    content: url('../../assets/empty.png');
+}
+
+button {
+    align-self: flex-end;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    user-select: none;
+}
+
+.saved-icon {
+    max-width: 50px;
+    max-height: 50px;
+}
+
 #movie-info {
     display: flex;
     flex-direction: column;
