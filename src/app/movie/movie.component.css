@@ -8,6 +8,7 @@
     font-family: Helvetica;
     box-shadow: 6px 7px rgb(194, 194, 194);
     background-color: lightgoldenrodyellow;
+    border-radius: 5px;
 }
 
 .saved {
