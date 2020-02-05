@@ -9,6 +9,7 @@ export class Movie implements IMovieInfo {
     releaseDate: string;
     rating: string;
     genreIDs: number[];
+    genre_ids: number[];
     length: string;
 
     constructor(srcMovie: any) {
@@ -19,5 +20,6 @@ export class Movie implements IMovieInfo {
         this.releaseDate = srcMovie.release_date;
         this.rating = srcMovie.vote_average;
         this.genreIDs = srcMovie.genre_ids;
+        this.genre_ids = srcMovie.genre_ids;
     }
 }
