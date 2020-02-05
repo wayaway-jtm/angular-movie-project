@@ -1,19 +1,32 @@
 <div class="searchBar">
   <div class="buttonFilter">
     <button (click)="filterButton()">Filter</button>
-    <div *ngIf="dropDown">
-      <ul class="dropdownContents">
-        <li>
-          <h4>Genre</h4>
-          <input type="checkbox" />Action <input type="checkbox" />Thriller
-          <input type="checkbox" />Comedy <input type="checkbox" />Drama
-        </li>
-        <li>
-          <h4>Rating</h4>
-          <input type="range" min="1" max="10">
-        </li>
-        <li>Release Date</li>
+    <!-- Side Nav Filter starts here -->
+    <div *ngIf="dropDown" class="sidenav">
+      <h1>Genre</h1>
+      <div class="genreTypes">
+        <div class="genreLists">
+          <span><input type="checkbox">Action</span>
+          <span><input type="checkbox">Comedy</span>
+          <span><input type="checkbox">Adventure</span>
+          <span><input type="checkbox">Crime</span>  
+        </div>
+        <div class="genreLists">
+          <span><input type="checkbox">Drama</span>
+          <span><input type="checkbox">Epics</span>
+          <span><input type="checkbox">Thriller</span>
+          <span><input type="checkbox">Musicals/Dance</span>  
+        </div>
+      </div>
+      <ul>
+        <li><h1>Rating</h1></li>
+        <li><p>STARS</p></li>
       </ul>
+      <ul>
+        <li><h1>Release Date</h1></li>
+        <li class="bottomInput"><input type="date" class="calendar"> <p>thru</p> <input type="date" class="calendar"></li>
+      </ul>
+
     </div>
   </div>
   <input type="text" placeholder="Movie Title" />
