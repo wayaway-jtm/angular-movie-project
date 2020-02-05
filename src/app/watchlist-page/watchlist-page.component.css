@@ -1,6 +1,4 @@
 .watchlist-container{
-    width: 50%;
-    height: 50%;
-    background-color: grey;
+    max-width: 70vw;
 }
 
