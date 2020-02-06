@@ -35,9 +35,14 @@ export class SearchCriteriaComponent implements OnInit {
   selectGenre(genreId) {
     this.service.settings.genre.push(genreId);
   }
+  // chooses release date times 
+  selectReleaseDate(releaseDateUrl) {
+    this.service.settings.releaseDate.push(releaseDateUrl);
+  }
   // sets desired MAX rating
   selectRating(ratingId) {
-    this.service.settings.push(ratingId);
+    this.service.settings.rating.push(ratingId);
+    console.log("10 Star");
   }
 
 }
