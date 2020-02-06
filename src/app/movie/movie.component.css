@@ -44,9 +44,10 @@ h1 {
 
 p {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     color: rgb(245, 245, 245);
     align-items: center;
+    width: 100%;
     font-size: 1rem;
     margin: 3px;
     padding: 2px;
@@ -59,7 +60,7 @@ p {
 }
 
 #rating-text {
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 #movie-poster {
