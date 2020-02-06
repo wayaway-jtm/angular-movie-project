@@ -19,6 +19,9 @@ header {
     font-size: 1.5rem;
     
 }
+a {
+    color: #E84F4F;
+}
 main {
     width: 90vw;
     margin: auto;
