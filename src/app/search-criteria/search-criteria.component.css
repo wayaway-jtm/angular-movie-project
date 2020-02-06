@@ -10,8 +10,9 @@ input {
 button {
   height: 36px;
   width: 70px;
-  border: 1px solid black;
+  color: #E84F4F;
 }
+
 .buttonFilter {
   display: flex;
   flex-direction: column;

@@ -9,6 +9,9 @@ button {
 header {
     width: 100%;
 }
+a {
+    color: #E84F4F;
+}
 main {
     width: 90vw;
     margin: auto;
