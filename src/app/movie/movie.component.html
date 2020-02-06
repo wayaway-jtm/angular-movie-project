@@ -1,13 +1,9 @@
 <div id="wrapper">
   <div id="movie-info">
-<!--    Rachael's modal commit
-    <img src="{{ posterPath }}" alt="" />
-    <p class="movie-title">{{ title }}</p>
-    <p class="info-header"><span class="star">&#9733;</span> {{ rating }}</p>
-    <button class="modal-button">More Info</button>
--->
     <h1>{{ title }}</h1>
-    <img id="movie-poster" src="{{ posterPath }}" alt="" />
+    <section id="poster-wrapper">
+      <img id="movie-poster" src="{{ posterPath }}" alt="" />
+    </section>
     <p class="info-header">
       <span id="rating-text">
         <span class="star">&#9733;</span> {{ rating }}
@@ -17,3 +13,4 @@
       </button>
     </p>
   </div>
+</div>

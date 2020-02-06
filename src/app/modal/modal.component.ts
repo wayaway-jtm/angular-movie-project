@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -9,7 +9,7 @@ export class ModalComponent {
 
   closeResult: string;
 
-  constructor(private modalService: ModalService) { }
+  constructor() { }
 
   ngOnInit() {
       // Stuff
