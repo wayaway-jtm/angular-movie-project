@@ -1,3 +1,7 @@
+div {
+  font-family: 'Bebas Neue', cursive;
+}
+
 input {
   border: 1px solid black;
   height: 2rem;
