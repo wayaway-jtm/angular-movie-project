@@ -2,17 +2,18 @@
 
   <ul>
     <li class="kernel-container">
-      <img class="kernel-logo" src="/assets/kernel-logo.png" [routerLink]="['/home']" routerLinkActive="router-link-active">
-    </li> 
+      <img class="kernel-logo" src="/assets/kernel-logo.png" [routerLink]="['/home']"
+        routerLinkActive="router-link-active">
+    </li>
     <li class="search-bar">
       <search-criteria></search-criteria>
     </li>
-    <li class="watchlist-container">
-      <img class="urkel-glasses" src="/assets/urkel-glasses.png">
-      <a class="watchlist"
-        [routerLink]="['/watchlist-page']"
-        routerLinkActive="router-link-active"
-        >Watchlist</a>
+    <li >
+
+      <a class="watchlist-container"[routerLink]="['/watchlist-page']" routerLinkActive="router-link-active"><img
+          class="urkel-glasses" src="/assets/urkel-glasses.png">
+        <div>Watchlist</div>
+      </a>
     </li>
   </ul>
 </header>
