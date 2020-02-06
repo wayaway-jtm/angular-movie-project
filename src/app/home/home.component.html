@@ -1,13 +1,17 @@
 <header>
+
   <ul>
+    <li class="kernel-container">
+      <img class="kernel-logo" src="/assets/kernel-logo.png" [routerLink]="['/home']" routerLinkActive="router-link-active">
+    </li> 
     <li class="search-bar">
       <search-criteria></search-criteria>
     </li>
     <li>
-      <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
-    </li>
-    <li>
-      <a [routerLink]="['/watchlist-page']" routerLinkActive="router-link-active">Watchlist</a>
+      <a class="watchlist"
+        [routerLink]="['/watchlist-page']"
+        routerLinkActive="router-link-active"
+        >Your Watchlist</a>
     </li>
   </ul>
 </header>

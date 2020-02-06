@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+// import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,12 +21,15 @@ import { ModalComponent } from './modal/modal.component';
     WatchlistPageComponent,
     HomeComponent,
     MovieComponent,
-    ModalComponent
+    ModalComponent,
+    // NgbModal,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
