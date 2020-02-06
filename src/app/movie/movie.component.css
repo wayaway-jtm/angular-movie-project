@@ -64,10 +64,13 @@ p {
 
 #movie-poster {
     width: 60%;
-    height: auto;
+    object-fit: contain;
 }
 
 #poster-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     flex-grow: 1;
 }
 
@@ -81,7 +84,6 @@ p {
     font-size: .9rem;
 
 }
-
 
 @media (min-width: 720px) {
     #wrapper {
