@@ -10,25 +10,29 @@ input {
 button {
   height: 36px;
   width: 70px;
-  color: #E84F4F;
+  color: #e84f4f;
 }
-
-.buttonFilter {
+.sideMenu {
   display: flex;
   flex-direction: column;
+}
+.filterButton {
+  background-color: #181818;
+  border: 0px;
 }
 .closeButton {
   align-self: flex-end;
   position: fixed;
   top: 3%;
-  left: 32%;
+  left: 220px;
 }
 .xBtn {
   border: 0px;
   font-size: 2rem;
-  background-color: white;
+  background-color: black;
   opacity: 0.9;
-  color: #E84F4F;
+  color: #e84f4f;
+  width: 0;
 }
 
 ul {
@@ -60,7 +64,8 @@ li {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: white; /* Black */
+  background-color: black; /* Black */
+  color: #ffd983;
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: hidden;
   display: flex;
@@ -90,7 +95,7 @@ li {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 750px) {
   .sidenav {
     padding-top: 15px;
   }
