@@ -73,8 +73,12 @@ font-size: 1.5rem;
   text-align: center;
 }
 
-@media (min-width: 720px) {
-  main {
-    width: 80vw;
+ /* sets header for mobile display with search bar below logo and watchlist button */
+@media (max-width: 510px) {
+  .search-bar {
+    position: absolute;
+    top: 110px;
+    width: 288px;
+    margin: inherit;
   }
 }
