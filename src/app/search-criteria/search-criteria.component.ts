@@ -10,7 +10,7 @@ export class SearchCriteriaComponent implements OnInit {
 
   constructor(public service : MovieAPIService) { }
 
-  dropDown : boolean = false;
+  sideMenu : boolean = false;
   genreID : [];
   releaseDateUrl : string;
   ratingID : string;
@@ -20,16 +20,16 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   toggleSide() {
-    this.dropDown = !this.dropDown;
+    this.sideMenu = !this.sideMenu;
   }
 
   openSide() {
-    this.dropDown = true;
+    this.sideMenu = true;
   }
 
   // closes side menu
   closeSide() {
-    this.dropDown = false;
+    this.sideMenu = false;
   }
   // selects genres
   selectGenre(genreId) {
