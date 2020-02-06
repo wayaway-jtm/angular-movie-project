@@ -9,7 +9,17 @@ export class SearchCriteriaComponent implements OnInit {
 
   constructor() { }
 
+  dropDown : boolean = false;
+
   ngOnInit() {
+  }
+
+  openSide() {
+    this.dropDown = true;
+    console.log("Hello World")
+  }
+  closeSide() {
+    this.dropDown = false;
   }
 
 }

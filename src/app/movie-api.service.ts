@@ -40,7 +40,7 @@ export class MovieAPIService {
   }
 
   getPosterSrc(imgUrl: string, width: number = 3) {
-    return String(`${this.imgQueryBase}/${this.poster_sizes[width]}${imgUrl}`);
+    return String(`${this.imgQueryBase}/${this.poster_sizes[width]}/${imgUrl}`);
   }
 
   getMovieGenreName(genreID: number) {
