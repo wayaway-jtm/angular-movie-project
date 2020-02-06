@@ -29,10 +29,11 @@ p {
     margin: 3px;
     padding: 2px;
 }
-h1 {
+.movie-title {
     justify-content: center;
-    color: rgb(19,108,178);
-    font-size: 1rem;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-family: 'Muli', sans-serif;
     
 }
 
@@ -57,7 +58,7 @@ section p span{
 p {
     display: flex;
     justify-content: center;
-    color: rgb(112, 112, 112);
+    color: rgb(245, 245, 245);
 
 }
 
@@ -73,6 +74,19 @@ img {
 li {
     list-style-type: none;
 }
+
+
+.modal-button {
+    border-radius: 5px;
+    font-family: 'Muli', sans-serif;
+    background-color: #e84f4f;
+    color: whitesmoke;
+    border: none;
+    width: 45%;
+    font-size: .9rem;
+
+}
+
 
 @media (min-width: 720px) {
     #wrapper {

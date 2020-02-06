@@ -34,6 +34,6 @@ export class MovieComponent implements OnInit {
       this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
     }
     this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
-  }
-
+  
+}
 }
