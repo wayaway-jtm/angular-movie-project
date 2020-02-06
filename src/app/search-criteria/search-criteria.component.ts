@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieAPIService } from '../movie-api.service';
 
 @Component({
   selector: 'search-criteria',
@@ -7,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service : MovieAPIService) { }
 
   dropDown : boolean = false;
 
   ngOnInit() {
   }
 
+  // opens side menu to filter search content
   openSide() {
     this.dropDown = true;
-    console.log("Hello World")
   }
+
+  selectGenre(genreId) {
+    this.service.settings.genre.push(genreId);
+  }
+  // closes side menu
   closeSide() {
     this.dropDown = false;
   }
