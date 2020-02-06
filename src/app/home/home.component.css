@@ -43,6 +43,20 @@ width: fit-content;
 .kernel-logo {
     width: 30%;
 }
+
+.urkel-glasses {
+width: 100px;
+}
+
+.watchlist-container{
+display: flex; 
+flex-direction: column; 
+align-items: center;
+height: 100px;
+/* position: relative; */
+
+}
+
 .search-bar {
     width: 30%;
     text-align: center;
