@@ -7,6 +7,7 @@ input {
   height: 2rem;
   width: -webkit-fill-available;
   padding-left: 0.5vw;
+  border-radius: 5%;
 }
 
 .searchBar {
