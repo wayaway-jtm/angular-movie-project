@@ -8,6 +8,11 @@ button {
 }
 
 header {
+  display: flex;
+  width: 100%;
+}
+main {
+  display: flex;
   width: 100%;
 }
 
@@ -32,6 +37,8 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  padding-left: 0px;
+  width: 100%;
 }
 
 li {
@@ -41,7 +48,7 @@ li {
 }
 
 .kernel-container {
-  width: fit-content;
+  width: 189px;
 }
 
 .urkel-glasses {

@@ -12,6 +12,7 @@ input {
 
 .searchBar {
   display: flex;
+  min-width: 200px;
 }
 
 button {
