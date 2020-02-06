@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../movie/movie.class';
 import { MovieAPIService } from '../movie-api.service';
 
@@ -9,25 +9,19 @@ import { MovieAPIService } from '../movie-api.service';
 })
 export class MovieListComponent implements OnInit {
 
-  movieList: Movie[] = [];
+  @Input() movieList: Movie[] = [];
 
   constructor(private movieApiService: MovieAPIService) { }
 
   ngOnInit() {
-    this.movieApiService.getNowPlayingMovies().subscribe((data: any) => {
-      for (const movie of data.results) {
-        this.movieList.push(new Movie(movie));
-      }
-    });
-    // this.movieList.push(newMovie);
-
-    this.movieApiService.getNowPlayingMovies().subscribe((data: any) => {
-      for (const movie of data.results) {
-        this.movieList.push(new Movie(movie));
-      }});
-    
-
-
+    // this.movieApiService.getNowPlayingMovies().subscribe((data: any) => {
+    //   for (const movie of data.results) {
+    //     this.movieList.push(new Movie(movie));
+    //   }
+    // });
   }
 
+  displayMovies(movies: Movie[]) {
+    this.movieList = movies;
+  }
 }

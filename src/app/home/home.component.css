@@ -6,11 +6,12 @@ button {
     width: 200px;
     height: 100px;
 }
+
 header {
     width: 100%;
 }
 main {
-    width: 80%;
+    width: 90vw;
     margin: auto;
 }
 ul {
@@ -26,4 +27,10 @@ li {
 .search-bar {
     width: 100%;
     flex: 1;
+}
+
+@media (min-width: 720px) {
+    main {
+        width: 80vw;
+    }
 }

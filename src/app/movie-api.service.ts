@@ -7,13 +7,16 @@ import { stringify } from 'querystring';
   providedIn: 'root'
 })
 export class MovieAPIService {
-  private apiKey: string = '56e67f6023e668760235d525751be987'
+  private apiKey: string = '56e67f6023e668760235d525751be987';
   private imgQueryBase: string = 'https://image.tmdb.org/t/p';
-  private poster_sizes: string[] = ["w92", "w154", "w185", "w342", "w500", "w780", "original"]
+  private poster_sizes: string[] = ["w92", "w154", "w185", "w342", "w500", "w780", "original"];
+  private genreContainer: any[] = [];
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) { 
+    this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=56e67f6023e668760235d525751be987&language=en-US').subscribe((data: any) => this.genreContainer = data.genres);
+  }
 
   // calls movie api
   fetchMovieApi() {
@@ -37,13 +40,12 @@ export class MovieAPIService {
   }
 
   getPosterSrc(imgUrl: string, width: number = 3) {
-    return String(`${this.imgQueryBase}/${this.poster_sizes[width]}${imgUrl}`);
+    return String(`${this.imgQueryBase}/${this.poster_sizes[width]}/${imgUrl}`);
   }
 
   getMovieGenreName(genreID: number) {
-    let genreContainer: any = this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=56e67f6023e668760235d525751be987&language=en-US');
-    let genreList: any[] = genreContainer.genres;
-    return genreList.find(x => x.id === genreID);
+    
+    return this.genreContainer.find(x => x.id === genreID).name;
   }
 
   getNowPlayingMovies() {

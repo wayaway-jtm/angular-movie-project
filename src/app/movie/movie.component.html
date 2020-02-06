@@ -1,16 +1,14 @@
 <div id="wrapper">
-  <img src="{{ posterPath }}" alt="" />
   <div id="movie-info">
     <h1>{{ title }}</h1>
-    <p><span>Description</span>: {{ overview }}</p>
-    <section id="details">
-      <p class="info-header"><span>Release Date:</span> {{ releaseDate }}</p>
-      <p class="info-header"><span>Rating:</span> {{ rating }}</p>
-      <p class="info-header"><span>Runtime:</span> {{ length }} min</p>
-      <p class="info-header">
-        <span>Genres: </span>
-        <span *ngFor="let genre of genreIDs" id="genreColor">{{ genre.name }} </span>
-      </p>
-    </section>
+    <img id="movie-poster" src="{{ posterPath }}" alt="" />
+    <p class="info-header">
+      <span id="rating-text">
+        <span class="star">&#9733;</span> {{ rating }}
+      </span>
+      <button id="newWatchlist" (click)="toggleSaved(id)" type="button">
+        <img class="saved-icon" [ngClass]="isSaved() ? 'saved' : 'not-saved'" alt="">
+      </button>
+    </p>
   </div>
 </div>
