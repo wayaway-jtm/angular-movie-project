@@ -4,8 +4,6 @@
     flex-direction: column;
     align-items: center;
     font-family: Helvetica;
-    box-shadow: 6px 7px rgb(194, 194, 194);
-    background-color: #DBF1FF;
 }
 
 .saved {
@@ -44,13 +42,9 @@ h1 {
 p {
     display: flex;
     justify-content: center;
-  /*
-    from Rachael's init style merge 2020-02-05
     color: rgb(245, 245, 245);
-  */
     align-items: center;
     font-size: 1rem;
-    color: rgb(112, 112, 112);
     margin: 3px;
     padding: 2px;
 }
