@@ -19,7 +19,10 @@ export class SearchCriteriaComponent implements OnInit {
   ngOnInit() {
   }
 
-  // opens side menu to filter search content
+  toggleSide() {
+    this.dropDown = !this.dropDown;
+  }
+
   openSide() {
     this.dropDown = true;
   }

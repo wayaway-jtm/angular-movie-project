@@ -1,4 +1,54 @@
-.watchlist-container{
-    max-width: 70vw;
+
+header {
+    width: 100%;
+} 
+
+a {
+    text-decoration: none;
+}
+h2 {
+    color: #FFD983;
+font-size: 4rem;
+font-family: 'Bebas Neue';
+/* font-family: 'Muli';    */
+text-decoration: none;
+width: 100%;
+text-align: center;
 }
 
+
+h3 {
+    color:  #e84f4f;
+    font-family: 'Muli'; 
+}
+
+.kernel-logo {
+    width: 30%;
+    min-width: 200px;
+    /* width: 250px; */
+}
+
+
+
+.intro-copy {
+    color: whitesmoke;
+font-size: 1.5rem;
+font-family: 'Muli';
+margin: 10px;
+}
+
+
+
+
+ul {
+    display: flex;
+    justify-content: center;   
+    align-items: center; 
+    flex-direction: row;
+    
+}
+li {
+    list-style-type: none;
+    color: whitesmoke;
+    margin: 5px;
+}
