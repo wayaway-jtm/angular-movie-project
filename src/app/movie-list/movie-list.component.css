@@ -1,3 +1,14 @@
+.grid-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;}
+
+.grid-item {
+    text-align: center;
+    margin: 0 0.5vw;
+}
+
 li {
     list-style-type: none;
     padding-bottom: 15px;
