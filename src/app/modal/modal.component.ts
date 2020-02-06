@@ -6,5 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
-
 }
