@@ -1,12 +1,12 @@
 <div class="searchBar">
   <div class="sideMenu">
-    <button (click)="openSide()" class="filterButton"><i class="fas fa-sliders-h fa-3x"></i></button>
+    <button (click)="toggleSide()" class="filterButton"><i class="fas fa-sliders-h fa-3x"></i></button>
     <!-- Side Nav Filter starts here -->
     <div *ngIf="dropDown" class="sidenav">
       <label class="closeButton">
         <button (click)="closeSide()" class="xBtn"><i class="far fa-times-circle"></i></button>
       </label>
-        <h1>Genre</h1>
+      <h1>Genre</h1>
       <div class="genreTypes">
         <div class="genreLists">
           <span>Action<br><input type="checkbox" /></span>
@@ -22,7 +22,9 @@
         </div>
       </div>
       <ul>
-        <li><h1>Rating</h1></li>
+        <li>
+          <h1>Rating</h1>
+        </li>
         <li>
           <div class="star-rating">
             <input type="radio" id="5-stars" name="rating" value="5" />
@@ -39,7 +41,9 @@
         </li>
       </ul>
       <ul>
-        <li><h1>Release Date</h1></li>
+        <li>
+          <h1>Release Date</h1>
+        </li>
         <li class="bottomInput">
           <input type="date" class="calendar" />
           <p>thru</p>
