@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { IMovieInfo } from '../imovie-info';
 import { MovieAPIService } from '../movie-api.service';
 import { Movie } from './movie.class';
+import { WatchlistService } from '../watchlist.service';
 
 @Component({
   selector: 'app-movie',
@@ -20,7 +21,21 @@ export class MovieComponent implements OnInit {
   length: string;
   @Input() srcMovie: Movie;
 
-  constructor(private movieApiService: MovieAPIService) { }
+
+  isSaved() {
+    return this.watchlistService.hasMovieId(this.id);
+  }
+
+  toggleSaved(movieId: number) {
+    if (!this.watchlistService.hasMovieId(movieId)) {
+      this.watchlistService.addMovie(movieId);
+    } else {
+      this.watchlistService.removeMovie(movieId);
+    }
+
+  }
+
+  constructor(private movieApiService: MovieAPIService, private watchlistService: WatchlistService) { }
 
   ngOnInit() {
     this.title = this.srcMovie.title;
@@ -34,6 +49,6 @@ export class MovieComponent implements OnInit {
       this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
     }
     this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
-  }
-
+  
+}
 }

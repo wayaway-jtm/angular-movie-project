@@ -1,87 +1,85 @@
-
 #wrapper {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     font-family: Helvetica;
-    border-radius: 5px;
-    width: 90%;
-    height: 100%;
-    padding: 0px;
+}
+
+.saved {
+    content: url('../../assets/saved.png');
+}
+
+.not-saved {
+    content: url('../../assets/empty.png');
+}
+
+button {
+    align-self: flex-end;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    user-select: none;
+}
+
+.saved-icon {
+    max-width: 50px;
+    max-height: 50px;
 }
 
 #movie-info {
     flex-direction: column;
     align-items: center;
-    /* border: 3px solid gray;
-    box-shadow: 6px 7px rgb(194, 194, 194);
-    background-color: rgb(168, 214, 243); */
-
-
 }
-/* #details {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-} */
-p {
-    margin: 3px;
-    padding: 2px;
-}
+
 h1 {
     justify-content: center;
-    color: rgb(19,108,178);
-    font-size: 1rem;
-    
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-family: 'Muli', sans-serif;
 }
 
-/* p span {
-    font-weight: bold;
-
-} */
-
-/* section p {
-    color: rgb(19,108,178);
-    
-} */
-/* 
-section p span{
-    color: black;
-    font-weight: bold;
-} */
-/* 
-#genreColor {
-    color: rgb(19,108,178);
-} */
 p {
     display: flex;
     justify-content: center;
-    color: rgb(112, 112, 112);
-
+    color: rgb(245, 245, 245);
+    align-items: center;
+    font-size: 1rem;
+    margin: 3px;
+    padding: 2px;
 }
 
 .star {
     color: gold;
     padding-right: 5px;
+    font-size: 1.5rem;
 }
 
-img {
+#rating-text {
+    flex-grow: 1;
+}
+
+#movie-poster {
     width: 60%;
     height: auto;
 }
-li {
-    list-style-type: none;
+
+
+.modal-button {
+    border-radius: 5px;
+    font-family: 'Muli', sans-serif;
+    background-color: #e84f4f;
+    color: whitesmoke;
+    border: none;
+    width: 45%;
+    font-size: .9rem;
+
 }
+
 
 @media (min-width: 720px) {
     #wrapper {
         flex-direction: row;
         justify-content: flex-start;
     }
-
-    /* #movie-info {
-        padding-left: 0.5vw;
-        max-width: 60vw;
-    } */
 }
