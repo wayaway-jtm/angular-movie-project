@@ -1,36 +1,22 @@
-/* * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.content {
-    position: fixed;
+#modal-wrapper {
+    position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
-    opacity:0;
-    -webkit-transition: opacity 100ms ease-in;
-    -moz-transition: opacity 100ms ease-in;
     transition: opacity 100ms ease-in;
     pointer-events: none;
 }
-.content:target {
+#modal-wrapper:target {
     opacity:1;
     pointer-events: auto;
 }
-.content > div {
-    max-width: 800px;
-    width: 90%;
-    position: relative;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 3px;
-    background: #fff;
+#modal-content {
+    width: 60vw;
+    color: floralwhite;
 }
+
 .close {
     font-family: Arial, Helvetica, sans-serif;
     background: #f26d7d;
@@ -54,4 +40,4 @@
 }
 .close:hover {
     background: #fa3f6f;
-} */
+}

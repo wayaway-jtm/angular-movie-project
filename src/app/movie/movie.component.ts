@@ -19,8 +19,13 @@ export class MovieComponent implements OnInit {
   genreIDs: number[] = [];
   genreNames: string[] = [];
   length: string;
+  showModal: boolean = false;
   @Input() srcMovie: Movie;
 
+
+  toggleModal() {
+    this.showModal = true;
+  }
 
   isSaved() {
     return this.watchlistService.hasMovieId(this.id);
@@ -49,6 +54,5 @@ export class MovieComponent implements OnInit {
       this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
     }
     this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
-  
-}
+  }
 }
