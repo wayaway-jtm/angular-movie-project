@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     font-family: Helvetica;
+    height: 100%;
 }
 
 .saved {
@@ -28,8 +29,10 @@ button {
 }
 
 #movie-info {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 h1 {
@@ -64,6 +67,9 @@ p {
     height: auto;
 }
 
+#poster-wrapper {
+    flex-grow: 1;
+}
 
 .modal-button {
     border-radius: 5px;
