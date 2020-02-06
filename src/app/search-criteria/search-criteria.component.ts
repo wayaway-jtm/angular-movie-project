@@ -11,6 +11,10 @@ export class SearchCriteriaComponent implements OnInit {
   constructor(public service : MovieAPIService) { }
 
   dropDown : boolean = false;
+  genreID : [];
+  releaseDateUrl : string;
+  ratingID : string;
+
 
   ngOnInit() {
   }
@@ -20,12 +24,17 @@ export class SearchCriteriaComponent implements OnInit {
     this.dropDown = true;
   }
 
-  selectGenre(genreId) {
-    this.service.settings.genre.push(genreId);
-  }
   // closes side menu
   closeSide() {
     this.dropDown = false;
+  }
+  // selects genres
+  selectGenre(genreId) {
+    this.service.settings.genre.push(genreId);
+  }
+  // sets desired MAX rating
+  selectRating(ratingId) {
+    this.service.settings.push(ratingId);
   }
 
 }

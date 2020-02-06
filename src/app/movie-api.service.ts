@@ -76,7 +76,8 @@ export class MovieAPIService {
   // get rating info and sends it to search criteria.ts
   getRatingURL(url : string) {
     if (this.settings.rating ) {
-      url += '&vote_count.gte' + this.settings.rating;
+      // sets max rating
+      url += '&vote_count.lte' + this.settings.rating;
     }
   }
 
