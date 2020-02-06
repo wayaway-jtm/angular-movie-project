@@ -9,6 +9,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { WatchlistPageComponent } from './watchlist-page/watchlist-page.component';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MovieComponent } from './movie/movie.component';
     MovieListComponent,
     WatchlistPageComponent,
     HomeComponent,
-    MovieComponent
+    MovieComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

@@ -3,77 +3,72 @@
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    border: 3px solid gray;
-    padding: 10px;
     font-family: Helvetica;
     box-shadow: 6px 7px rgb(194, 194, 194);
     background-color: #DBF1FF;
 }
 
+.saved {
+    content: url('../../assets/saved.png');
+}
+
+.not-saved {
+    content: url('../../assets/empty.png');
+}
+
+button {
+    align-self: flex-end;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    user-select: none;
+}
+
+.saved-icon {
+    max-width: 50px;
+    max-height: 50px;
+}
+
 #movie-info {
-    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: fit-content;
-    font-size: small;
+    align-items: center;
 }
-#details {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-}
-p {
-    margin: 3px;
-    padding: 2px;
-}
+
 h1 {
-    margin: 3px;
+    justify-content: center;
     color: rgb(19,108,178);
-
-}
-.info-header {
-    background-color: rgb(202, 202, 202);
-    border-radius: 5px;
-    width: fit-content;
-}
-
-p span {
-    font-weight: bold;
-
-}
-
-section p {
-    color: rgb(19,108,178);
+    font-size: 1rem;
     
 }
 
-section p span{
-    color: black;
-    font-weight: bold;
-}
-
-#genreColor {
-    color: rgb(19,108,178);
-}
 p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
     color: rgb(112, 112, 112);
+    margin: 3px;
+    padding: 2px;
 }
 
-img {
-    height: 235px;
+.star {
+    color: gold;
+    padding-right: 5px;
+    font-size: 1.5rem;
 }
-li {
-    list-style-type: none;
+
+#rating-text {
+    flex-grow: 1;
+}
+
+#movie-poster {
+    width: 60%;
+    height: auto;
 }
 
 @media (min-width: 720px) {
     #wrapper {
         flex-direction: row;
         justify-content: flex-start;
-    }
-
-    #movie-info {
-        padding-left: 0.5vw;
-        max-width: 60vw;
     }
 }
