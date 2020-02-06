@@ -1,5 +1,12 @@
 <div id="modal-wrapper">
   <section id="modal-content">
-    {{ title }}
+    <div id="details">
+      <a class="btn close" (click)="close()">⌽</a>
+      <p class="title"><span>{{ title }}</span> <span id="rating" id="star"> &#9733; {{ rating }}</span><span class="ten">/10</span></p>
+      <p class="length"><span id="length"> {{ length }} minutes  |  ({{ releaseDate }})  |  Genre: {{ genreNames }}</span></p>
+      <p class="overview"><span> {{ overview }}</span></p>
+    </div> 
+    <img id="movie-poster" src="{{ posterPath }}" alt="" />
+    <img id="backdrop" src="{{ backdrop_path }}" alt="" />
   </section>
 </div>
