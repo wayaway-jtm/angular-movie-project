@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     font-family: Helvetica;
+    height: 100%;
 }
 
 .saved {
@@ -28,8 +29,10 @@ button {
 }
 
 #movie-info {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 h1 {
@@ -41,9 +44,10 @@ h1 {
 
 p {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     color: rgb(245, 245, 245);
     align-items: center;
+    width: 100%;
     font-size: 1rem;
     margin: 3px;
     padding: 2px;
@@ -55,15 +59,17 @@ p {
     font-size: 1.5rem;
 }
 
-#rating-text {
-    flex-grow: 1;
-}
-
 #movie-poster {
     width: 60%;
-    height: auto;
+    object-fit: contain;
 }
 
+#poster-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+}
 
 .modal-button {
     border-radius: 5px;
@@ -75,7 +81,6 @@ p {
     font-size: .9rem;
 
 }
-
 
 @media (min-width: 720px) {
     #wrapper {
