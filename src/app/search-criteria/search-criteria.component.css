@@ -31,11 +31,17 @@ button {
   border: 0px;
 }
 
-.closeButton {
+.buttonContainer {
   align-self: flex-end;
   position: fixed;
   top: 3%;
   left: 220px;
+  display: flex;
+  flex-direction: column;
+}
+.submitButton {
+  width: 10px;
+  height: 10px;
 }
 
 .xBtn {
@@ -49,6 +55,7 @@ button {
 
 ul {
   padding-left: 0;
+  flex-direction: column;
 }
 
 li {
@@ -74,16 +81,16 @@ li {
 
 /* The sidebar menu */
 .sidenav {
-  height: 100%;
+  height: 60%;
   /* Full-height: remove this if you want "auto" height */
-  width: 255px;
+  width: 100%;
   /* Set the width of the sidebar */
   padding-left: 2vw;
-  position: fixed;
+  position: absolute;
   /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1;
   /* Stay on top */
-  top: 0;
+  top: 110px;
   /* Stay at the top */
   left: 0;
   background-color: black;
@@ -93,9 +100,12 @@ li {
   /* Disable horizontal scroll */
   overflow-y: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+#genreBox {
+  display: flex;
+  flex-direction: column;
 }
 
 /* The navigation menu links */

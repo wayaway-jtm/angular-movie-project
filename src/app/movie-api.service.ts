@@ -95,19 +95,19 @@ export class MovieAPIService {
       url = +"&genre URL goes here" + this.settings.genres.thriller;
     }
     if (this.settings.action) {
-      url = +"&genre URL goes here" + this.settings.genres.action;
+      url = +"?genre URL goes here" + this.settings.genres.action;
     }
     if (this.settings.adventure) {
-      url = +"&genre URL goes here" + this.settings.genres.adventure;
+      url = +"?genre URL goes here" + this.settings.genres.adventure;
     }
     if (this.settings.comedy) {
-      url = +"&genre URL goes here" + this.settings.genres.comedy;
+      url = +"?genre URL goes here" + this.settings.genres.comedy;
     }
     if (this.settings.crime) {
-      url = +"&genre URL goes here" + this.settings.genres.crime;
+      url = +"?genre URL goes here" + this.settings.genres.crime;
     }
     if (this.settings.drama) {
-      url = +"&genre URL goes here" + this.settings.genres.drama;
+      url = +"?genre URL goes here" + this.settings.genres.drama;
     }
     if (this.settings.epics) {
       url = +"&genre URL goes here" + this.settings.genres.epics;
