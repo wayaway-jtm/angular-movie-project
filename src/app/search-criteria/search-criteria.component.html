@@ -33,9 +33,9 @@
           <h1>Release Date</h1>
         </li>
         <li class="bottomInput">
-          <input type="date" class="calendar" />
+          <input type="date" class="calendar" [(ngModel)]="minDate" />
           <p>thru</p>
-          <input type="date" class="calendar" />
+          <input type="date" class="calendar" [(ngModel)]="maxDate" />
         </li>
       </ul>
     </div>

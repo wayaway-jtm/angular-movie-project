@@ -9,8 +9,6 @@ import { Movie } from '../movie/movie.class';
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  constructor(public service : MovieAPIService) { }
-
   sideMenu : boolean = false;
   genreID : [];
   releaseDateUrl : string;
@@ -38,8 +36,14 @@ export class SearchCriteriaComponent implements OnInit {
     { value: 2, checked: false },
     { value: 1, checked: false }
   ];
+  minDate = '1800-01-01';
+  maxDate = '';
 
   @Output() userSearch = new EventEmitter<Movie[]>();
+
+  constructor(public service : MovieAPIService) { 
+    this.maxDate = service.getISODateNoTime(new Date());
+  }
 
   ngOnInit() {
   }
@@ -49,12 +53,29 @@ export class SearchCriteriaComponent implements OnInit {
   }
 
   filter() {
+    // get selected genres
+    let selectedGenres = this.genres.filter(g => g.checked);
+
+    // get selected rating
+    let minRating = this.getMinRating();
+
+    // selected release dates already handled
+    console.log('Min Date: ', this.minDate);
+    console.log('Max Date: ', this.maxDate);
+    console.log('Rating: ', minRating);
+    console.log('Genres: ', selectedGenres);
+    this.service.getFilteredMovies(this.minDate, this.maxDate, minRating, selectedGenres).subscribe((data: any) => console.log(data));
     
   }
 
-  chooseRating(eventVar: number) {
-    this.ratings[this.ratings.findIndex(x => x.value === eventVar)].checked = true;
-    console.log(this.ratings);
+  getMinRating() {
+    let minRating: number = 0;
+    for (const star of this.ratings) {
+      if (star.checked) {
+        minRating = star.value;
+      }
+    }
+    return minRating;
   }
 
   openSide() {
@@ -65,18 +86,18 @@ export class SearchCriteriaComponent implements OnInit {
   closeSide() {
     this.sideMenu = false;
   }
-  // selects genres
-  selectGenre(genreId) {
-    this.service.settings.genre.push(genreId);
-  }
-  // chooses release date times 
-  selectReleaseDate(releaseDateUrl) {
-    this.service.settings.releaseDate.push(releaseDateUrl);
-  }
-  // sets desired MAX rating
-  selectRating(ratingId) {
-    this.service.settings.rating.push(ratingId);
-    console.log("10 Star");
-  }
+  // // selects genres
+  // selectGenre(genreId) {
+  //   this.service.settings.genre.push(genreId);
+  // }
+  // // chooses release date times 
+  // selectReleaseDate(releaseDateUrl) {
+  //   this.service.settings.releaseDate.push(releaseDateUrl);
+  // }
+  // // sets desired MAX rating
+  // selectRating(ratingId) {
+  //   this.service.settings.rating.push(ratingId);
+  //   console.log("10 Star");
+  // }
 
 }
