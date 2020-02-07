@@ -82,17 +82,9 @@ export class MovieAPIService {
     return this.genreContainer.find(x => x.id === genreID).name;
   }
 
-  getFullUrl() {
-    let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`;
-
-    url = this.getReleaseDatesURL(url);
-
-    return url;
-  }
-
   getNowPlayingMovies() {
     // returns movies that are now playing
-    return this.http.get(this.getFullUrl());
+    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`);
   }
 
   // FILTER FUNCTIONALITY BELOW   *********************************

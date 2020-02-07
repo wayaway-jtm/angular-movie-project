@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MovieAPIService } from '../movie-api.service';
+import { Movie } from '../movie/movie.class';
 
 @Component({
   selector: 'search-criteria',
@@ -14,7 +15,19 @@ export class SearchCriteriaComponent implements OnInit {
   genreID : [];
   releaseDateUrl : string;
   ratingID : string;
+  searchResults: Movie[] = [];
+  genres = [
+    { name: 'Action', checked: false},
+    { name: 'Comedy', checked: false},
+    { name: 'Adventure', checked: false},
+    { name: 'Crime', checked: false},
+    { name: 'Drama', checked: false},
+    { name: 'Epics', checked: false},
+    { name: 'Thriller', checked: false},
+    { name: 'Musicals/Dance', checked: false},
+  ]
 
+  @Output() userSearch = new EventEmitter<Movie[]>();
 
   ngOnInit() {
   }
