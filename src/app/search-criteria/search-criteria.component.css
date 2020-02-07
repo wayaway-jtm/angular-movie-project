@@ -68,7 +68,7 @@ li {
 /* The sidebar menu */
 .sidenav {
   height: 60%;
-  width: 100%;
+  width: 99%;
   border: 3px solid white;
   position: absolute;
   z-index: 1;
@@ -160,7 +160,7 @@ li {
 @media screen and (max-width: 510px) {
   .sidenav {
     height: 100%;
-    width: 100%;
+    width: 98%;
     position: fixed;
     z-index: 1;
     top: 0;
