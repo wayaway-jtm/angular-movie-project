@@ -5,6 +5,7 @@
     </button>
     <!-- Side Nav Filter starts here -->
     <div *ngIf="sideMenu" class="sidenav">
+      <button id="xBtn" (click)="closeSide()" ><i class="fas fa-times fa-4x"></i></button>
       <div id="genreBox">
         <h1>Genre</h1>
         <div class="genreTypes">
@@ -28,7 +29,7 @@
           </div>
         </li>
         <li>
-          <button id="submitBtn" (click)="search()">Submit</button>
+          <button id="filterBtn" (click)="search()">Filter</button>
         </li>
       </ul>
       <ul>

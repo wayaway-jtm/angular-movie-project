@@ -19,16 +19,13 @@ button {
   height: 36px;
   width: 70px;
   color: #e84f4f;
+  background-color: #181818;
+  border: none;
 }
 
 .sideMenu {
   display: flex;
   flex-direction: column;
-}
-
-.filterButton {
-  background-color: #181818;
-  border: 0px;
 }
 
 .buttonContainer {
@@ -42,15 +39,6 @@ button {
 .submitButton {
   width: 10px;
   height: 10px;
-}
-
-.xBtn {
-  border: 0px;
-  font-size: 2rem;
-  background-color: black;
-  opacity: 0.9;
-  color: #e84f4f;
-  width: 0;
 }
 
 ul {
@@ -85,7 +73,8 @@ li {
 /* The sidebar menu */
 .sidenav {
   height: 60%;
-  width: 100%;
+  width: 101%;
+  border: 3px solid white;
   position: absolute;
   z-index: 1;
   top: 110px;
@@ -106,22 +95,27 @@ label p {
   margin: 0;
 }
 
-#submitBtn {
+#filterBtn {
   position: absolute;
   top: 75%;
   left: 40%;
   border: 0px;
   border-radius: 10px;
   background-color: #e84f4f;
-  color: #FFD983;
+  color: #ffd983;
   width: 20%;
   height: 13%;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
+
 #genreBox {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+ /* only used on mobile devices */
+#xBtn {
+  display: none;
 }
 
 /* The navigation menu links */
@@ -144,14 +138,6 @@ label p {
   /* Same as the width of the sidebar */
   padding: 0px 10px;
 }
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 750px) {
-  .sidenav a {
-    font-size: 18px;
-  }
-}
-
 /* Star rating CSS */
 .star-rating {
   display: flex;
@@ -190,4 +176,47 @@ label p {
 .star-rating input:hover::after,
 .star-rating input:hover ~ input::after {
   color: #fc0;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 750px) {
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .sidenav {
+    height: 100%;
+    width: 98%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: #ffd983;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #genreBox {
+    padding-top: 25px;
+  }
+  #filterBtn {
+    top: 3%;
+    left: 70%;
+    width: 20%;
+    height: 8%;
+    font-size: 1.1rem;
+  }
+  #xBtn {
+    display: inline;
+    position: absolute;
+    top: 3%;
+    left: 6%;
+  }
 }
