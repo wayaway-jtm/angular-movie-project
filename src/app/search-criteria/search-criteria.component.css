@@ -1,5 +1,5 @@
 div {
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
 input {
@@ -82,26 +82,29 @@ li {
 /* The sidebar menu */
 .sidenav {
   height: 60%;
-  /* Full-height: remove this if you want "auto" height */
   width: 100%;
-  /* Set the width of the sidebar */
-  padding-left: 2vw;
   position: absolute;
-  /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1;
-  /* Stay on top */
   top: 110px;
-  /* Stay at the top */
   left: 0;
   background-color: black;
-  /* Black */
   color: #ffd983;
   overflow-x: hidden;
-  /* Disable horizontal scroll */
   overflow-y: hidden;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
+}
+#submitBtn {
+  position: absolute;
+  top: 75%;
+  left: 40%;
+  border: 0px;
+  border-radius: 10px;
+  background-color: #e84f4f;
+  color: #FFD983;
+  width: 20%;
+  height: 13%;
+  font-size: 2rem;
 }
 #genreBox {
   display: flex;
@@ -131,10 +134,6 @@ li {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 750px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-
   .sidenav a {
     font-size: 18px;
   }
@@ -159,11 +158,11 @@ li {
   cursor: pointer;
 }
 
-.star-rating :checked~label {
+.star-rating :checked ~ label {
   color: #f90;
 }
 
 .star-rating label:hover,
-.star-rating label:hover~label {
+.star-rating label:hover ~ label {
   color: #fc0;
 }
