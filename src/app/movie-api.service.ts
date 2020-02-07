@@ -121,7 +121,7 @@ export class MovieAPIService {
   }
 
   getGenreId(genreName: string) {
-    return this.genreContainer.find(g => g.name === genreName);
+    return this.genreContainer.find(g => g.name === genreName).id;
   }
 
   getISODateNoTime(newDate: Date): string {
