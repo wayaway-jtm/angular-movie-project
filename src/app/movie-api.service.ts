@@ -103,21 +103,25 @@ export class MovieAPIService {
     }
     if (genreIDs.length > 0) {
       if (genreIDs.length === 1) {
-        queryString += `&with_genres=${genreIDs[0].name}`;
+        queryString += `&with_genres=${this.getGenreId(genreIDs[0].name)}`;
       } else {
         queryString += '&with_genres=';
         for (const genreID of genreIDs) {
           // Filtering out last one for different format
           if (genreIDs.indexOf(genreID) !== (genreIDs.length - 1)) {
             // %2C%20 is apparently how they do commas
-            queryString += `${genreIDs[0].name}%2C%20`;
+            queryString += `${this.getGenreId(genreIDs[0].name)}%2C%20`;
           } else {
-            queryString += `${genreIDs[0].name}`;
+            queryString += `${this.getGenreId(genreIDs[0].name)}`;
           }
         }
       }
     }
     return this.http.get(queryString);
+  }
+
+  getGenreId(genreName: string) {
+    return this.genreContainer.find(g => g.name === genreName);
   }
 
   getISODateNoTime(newDate: Date): string {
