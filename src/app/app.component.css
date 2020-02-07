@@ -10,7 +10,7 @@ a {
     font-size: 3rem;
     margin: 20px;
 }
-/* .name-container {
+.name-container {
     display: flex; 
     flex-direction: row;
     width: 100%;
@@ -53,7 +53,7 @@ a {
       position: relative;
       left: 0;
       bottom: 0;
-      width: 100%;
+      width: 102%;
       height: 180px;
       background-color: #E84F4F;
       color: white;
@@ -61,6 +61,5 @@ a {
     
     .social-icons {
       height: 75px;
-    } */
-    
-    
+    } 
+  
