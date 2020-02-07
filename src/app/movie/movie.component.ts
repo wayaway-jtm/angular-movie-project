@@ -3,6 +3,7 @@ import { IMovieInfo } from '../imovie-info';
 import { MovieAPIService } from '../movie-api.service';
 import { Movie } from './movie.class';
 import { WatchlistService } from '../watchlist.service';
+import { isUndefined } from 'util';
 
 @Component({
   selector: 'app-movie',
@@ -19,7 +20,7 @@ export class MovieComponent implements OnInit {
   genreIDs: number[] = [];
   genreNames: string[] = [];
   length: string;
-  @Input() srcMovie: Movie;
+  @Input() srcMovie: any;
 
 
   isSaved() {
@@ -40,15 +41,24 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     this.title = this.srcMovie.title;
     this.id = this.srcMovie.id;
-    this.posterPath = this.movieApiService.getPosterSrc(this.srcMovie.posterPath);
+    if (isUndefined(this.srcMovie.posterPath)) {
+      this.posterPath = this.movieApiService.getPosterSrc(this.srcMovie.poster_path);
+    } else {
+      this.posterPath = this.movieApiService.getPosterSrc(this.srcMovie.posterPath);
+    }
     this.overview = this.srcMovie.overview;
     this.releaseDate = this.srcMovie.releaseDate;
-    this.rating = this.srcMovie.rating;
-    this.genreIDs = this.srcMovie.genreIDs;
+    if (isUndefined(this.srcMovie.genreIDs)) {
+      this.genreIDs = this.srcMovie.genre_ids;
+    } else {
+      this.genreIDs = this.srcMovie.genreIDs;
+    }
+
+
     for (const genre of this.genreIDs) {
       this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
     }
     this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
-  
-}
+
+  }
 }
