@@ -22,14 +22,10 @@
         <li>
           <div class="star-rating">
             <input type="radio" name="rating" *ngFor="let star of ratings" class="star" />
-            <!-- <label *ngFor="let star of ratings" class="star">
-              
-              <input type="radio" name="rating" value={{star.value}} [(ngModel)]="star.checked" />
-            </label> -->
           </div>
         </li>
         <li>
-          <button id="filterBtn" (click)="search()">Filter</button>
+          <button id="filterBtn" (click)="filter()">Filter</button>
         </li>
       </ul>
       <ul>

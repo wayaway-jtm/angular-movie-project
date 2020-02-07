@@ -48,7 +48,7 @@ export class SearchCriteriaComponent implements OnInit {
     this.sideMenu = !this.sideMenu;
   }
 
-  search() {
+  filter() {
     
   }
 
