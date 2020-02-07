@@ -60,7 +60,10 @@ export class SearchCriteriaComponent implements OnInit {
     let minRating = this.getMinRating();
 
     // selected release dates already handled
-    this.service.getFilteredMovies(this.minDate, this.maxDate, minRating, selectedGenres).subscribe((data: any) => console.log(data));
+    this.service.getFilteredMovies(this.minDate, this.maxDate, minRating, selectedGenres).subscribe(
+      (data: any) => this.searchResults = data.results,
+      err => console.log('Error: ', err),
+      () => this.userSearch.emit(this.searchResults));
     
   }
 
