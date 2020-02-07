@@ -87,38 +87,6 @@ export class MovieAPIService {
     return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`);
   }
 
-  // FILTER FUNCTIONALITY BELOW   *********************************
-
-  // sets url based on genre(s) selected
-  getGenreURL(url: string) {
-    if (this.settings.thriller) {
-      url = +"&genre URL goes here" + this.settings.genres.thriller;
-    }
-    if (this.settings.action) {
-      url = +"?genre URL goes here" + this.settings.genres.action;
-    }
-    if (this.settings.adventure) {
-      url = +"?genre URL goes here" + this.settings.genres.adventure;
-    }
-    if (this.settings.comedy) {
-      url = +"?genre URL goes here" + this.settings.genres.comedy;
-    }
-    if (this.settings.crime) {
-      url = +"?genre URL goes here" + this.settings.genres.crime;
-    }
-    if (this.settings.drama) {
-      url = +"?genre URL goes here" + this.settings.genres.drama;
-    }
-    if (this.settings.epics) {
-      url = +"&genre URL goes here" + this.settings.genres.epics;
-    }
-    if (this.settings.musicals) {
-      url = +"&genre URL goes here" + this.settings.genres.musicals;
-    }
-
-    return url;
-  }
-
   // gets release date info and sends it to search criteria.ts
   getReleaseDatesURL(url: string) {
     if (this.settings.releaseDate.start) {
