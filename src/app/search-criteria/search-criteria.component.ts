@@ -25,7 +25,19 @@ export class SearchCriteriaComponent implements OnInit {
     { name: 'Epics', checked: false},
     { name: 'Thriller', checked: false},
     { name: 'Musicals/Dance', checked: false},
-  ]
+  ];
+  ratings = [
+    { value: 10, checked: false },
+    { value: 9, checked: false },
+    { value: 8, checked: false },
+    { value: 7, checked: false },
+    { value: 6, checked: false },
+    { value: 5, checked: false },
+    { value: 4, checked: false },
+    { value: 3, checked: false },
+    { value: 2, checked: false },
+    { value: 1, checked: false }
+  ];
 
   @Output() userSearch = new EventEmitter<Movie[]>();
 
@@ -34,6 +46,15 @@ export class SearchCriteriaComponent implements OnInit {
 
   toggleSide() {
     this.sideMenu = !this.sideMenu;
+  }
+
+  search() {
+    
+  }
+
+  chooseRating(eventVar: number) {
+    this.ratings[this.ratings.findIndex(x => x.value === eventVar)].checked = true;
+    console.log(this.ratings);
   }
 
   openSide() {

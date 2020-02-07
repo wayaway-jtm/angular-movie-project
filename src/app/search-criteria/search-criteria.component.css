@@ -72,6 +72,9 @@ li {
 
 .genreTypes {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 30%;
 }
 
 .genreLists {
@@ -94,6 +97,15 @@ li {
   display: flex;
   justify-content: space-evenly;
 }
+
+label {
+  width: 50%;
+}
+
+label p {
+  margin: 0;
+}
+
 #submitBtn {
   position: absolute;
   top: 75%;
@@ -109,6 +121,7 @@ li {
 #genreBox {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* The navigation menu links */
@@ -150,19 +163,31 @@ li {
 }
 
 .star-rating input {
-  display: none;
+  /* display: none; */
+  height: 0px;
 }
 
-.star-rating label {
+.star-rating input::after {
+  content: '\2605';
   color: #ccc;
-  cursor: pointer;
+  display: block;
+  font-size: 2rem;
 }
 
-.star-rating :checked ~ label {
+/* .star-rating input:hover::after {
+  color: #fc0;
+}
+
+.star-rating input:hover ~ input::after {
+  color: #fc0;
+} */
+
+.star-rating :checked::after,
+.star-rating :checked ~ input::after {
   color: #f90;
 }
 
-.star-rating label:hover,
-.star-rating label:hover ~ label {
+.star-rating input:hover::after,
+.star-rating input:hover ~ input::after {
   color: #fc0;
 }

@@ -8,20 +8,11 @@
       <div id="genreBox">
         <h1>Genre</h1>
         <div class="genreTypes">
-          <div class="genreLists">
-            <span>Action<br /><input type="checkbox"/></span>
-            <span>Comedy<br /><input type="checkbox"/></span>
-            <span>Adventure<br /><input type="checkbox"/></span>
-            <span>Crime<br /><input type="checkbox"/></span>
-          </div>
-          <div class="genreLists">
-            <span>Drama<br /><input type="checkbox" /></span>
-            <span>Epics<br /><input type="checkbox" /></span>
-            <span>Thriller<br /><input type="checkbox" /></span>
-            <span>Musicals/Dance<br /><input type="checkbox" /></span>
-          </div>
+          <label *ngFor="let genre of genres">
+            <p>{{genre.name}}</p>
+            <input type="checkbox" [(ngModel)]="genre.checked" />
+          </label>
         </div>
-
       </div>
       <ul>
         <li>
@@ -29,30 +20,15 @@
         </li>
         <li>
           <div class="star-rating">
-            <input type="radio" id="10-stars" name="rating" value="10" />
-            <label for="10-stars" class="star">&#9733;</label>
-            <input type="radio" id="9-stars" name="rating" value="9" />
-            <label for="9-stars" class="star">&#9733;</label>
-            <input type="radio" id="8-stars" name="rating" value="8" />
-            <label for="8-stars" class="star">&#9733;</label>
-            <input type="radio" id="7-stars" name="rating" value="7" />
-            <label for="7-stars" class="star">&#9733;</label>
-            <input type="radio" id="6-star" name="rating" value="6" />
-            <label for="6-star" class="star">&#9733;</label>
-            <input type="radio" id="5-stars" name="rating" value="5" />
-            <label for="5-stars" class="star">&#9733;</label>
-            <input type="radio" id="4-stars" name="rating" value="4" />
-            <label for="4-stars" class="star">&#9733;</label>
-            <input type="radio" id="3-stars" name="rating" value="3" />
-            <label for="3-stars" class="star">&#9733;</label>
-            <input type="radio" id="2-stars" name="rating" value="2" />
-            <label for="2-stars" class="star">&#9733;</label>
-            <input type="radio" id="1-star" name="rating" value="1" />
-            <label for="1-star" class="star">&#9733;</label>
+            <input type="radio" name="rating" *ngFor="let star of ratings" class="star" />
+            <!-- <label *ngFor="let star of ratings" class="star">
+              
+              <input type="radio" name="rating" value={{star.value}} [(ngModel)]="star.checked" />
+            </label> -->
           </div>
         </li>
         <li>
-          <button id="submitBtn">Submit</button>
+          <button id="submitBtn" (click)="search()">Submit</button>
         </li>
       </ul>
       <ul>
