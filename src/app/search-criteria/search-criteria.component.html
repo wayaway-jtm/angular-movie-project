@@ -1,25 +1,27 @@
 <div class="searchBar">
   <div class="sideMenu">
-    <button (click)="toggleSide()" class="filterButton"><i class="fas fa-sliders-h fa-3x"></i></button>
+    <button (click)="toggleSide()" class="filterButton">
+      <i class="fas fa-sliders-h fa-3x"></i>
+    </button>
     <!-- Side Nav Filter starts here -->
     <div *ngIf="sideMenu" class="sidenav">
-      <label class="closeButton">
-        <button (click)="closeSide()" class="xBtn"><i class="far fa-times-circle"></i></button>
-      </label>
-      <h1>Genre</h1>
-      <div class="genreTypes">
-        <div class="genreLists">
-          <span>Action<br><input type="checkbox" /></span>
-          <span>Comedy<br><input type="checkbox" /></span>
-          <span>Adventure<br><input type="checkbox" /></span>
-          <span>Crime<br><input type="checkbox" /></span>
+      <div id="genreBox">
+        <h1>Genre</h1>
+        <div class="genreTypes">
+          <div class="genreLists">
+            <span>Action<br /><input type="checkbox"/></span><span>Comedy<br /><input type="checkbox"/></span>
+
+            <span>Adventure<br /><input type="checkbox"/></span>
+            <span>Crime<br /><input type="checkbox"/></span>
+          </div>
+          <div class="genreLists">
+            <span>Drama<br /><input type="checkbox"/></span>
+            <span>Epics<br /><input type="checkbox"/></span>
+            <span>Thriller<br /><input type="checkbox"/></span>
+            <span>Musicals/Dance<br /><input type="checkbox"/></span>
+          </div>
         </div>
-        <div class="genreLists">
-          <span>Drama<br><input type="checkbox" /></span>
-          <span>Epics<br><input type="checkbox" /></span>
-          <span>Thriller<br><input type="checkbox" /></span>
-          <span>Musicals/Dance<br><input type="checkbox" /></span>
-        </div>
+  
       </div>
       <ul>
         <li>

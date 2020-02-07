@@ -15,7 +15,6 @@ export class SearchCriteriaComponent implements OnInit {
   releaseDateUrl : string;
   ratingID : string;
 
-
   ngOnInit() {
   }
 
