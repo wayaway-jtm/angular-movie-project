@@ -19,6 +19,8 @@ button {
   height: 36px;
   width: 70px;
   color: #e84f4f;
+  background-color: #181818;
+  border: none;
 }
 
 .sideMenu {
