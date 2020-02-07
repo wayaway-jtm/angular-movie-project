@@ -7,6 +7,9 @@ import { HttpClient } from "@angular/common/http";
 export class MovieAPIService {
   private apiKey: string = "56e67f6023e668760235d525751be987";
   private imgQueryBase: string = "https://image.tmdb.org/t/p";
+  private baseQueryUrl: string = "https://api.themoviedb.org/3";
+  private baseFilterUrl: string =
+    `${this.baseQueryUrl}/discover/movie?api_key=${this.apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
   private poster_sizes: string[] = [
     "w92",
     "w154",
@@ -18,52 +21,50 @@ export class MovieAPIService {
   ];
   private genreContainer: any[] = [];
 
-  public settings: any;
-
   constructor(private http: HttpClient) {
     this.http
       .get(
-        "https://api.themoviedb.org/3/genre/movie/list?api_key=56e67f6023e668760235d525751be987&language=en-US"
+        `${this.baseQueryUrl}/genre/movie/list?api_key=56e67f6023e668760235d525751be987&language=en-US`
       )
       .subscribe((data: any) => (this.genreContainer = data.genres));
 
-    // all of the search criteria
-    this.settings = {
-      genres: {
-        thriller: null,
-        action: null,
-        adventure: null,
-        comedy: null,
-        crime: null,
-        drama: null,
-        epics: null,
-        musicals: null
-      },
-      rating: null,
-      releaseDate: {
-        start: null,
-        end: null
-      }
-    };
+    // // all of the search criteria
+    // this.settings = {
+    //   genres: {
+    //     thriller: null,
+    //     action: null,
+    //     adventure: null,
+    //     comedy: null,
+    //     crime: null,
+    //     drama: null,
+    //     epics: null,
+    //     musicals: null
+    //   },
+    //   rating: null,
+    //   releaseDate: {
+    //     start: null,
+    //     end: null
+    //   }
+    // };
   }
 
   // calls movie api
   fetchMovieApi() {
     return this.http.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${this.apiKey}&sort_by=release_date.desc`
+      `${this.baseQueryUrl}/discover/movie?api_key=${this.apiKey}&sort_by=release_date.desc`
     );
   }
 
   searchMovieByName(movieName: string) {
     // Returns English non-adult movies matching the given string
     return this.http.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`
+      `${this.baseQueryUrl}/search/movie?api_key=${this.apiKey}&language=en-US&query=${movieName}&page=1&include_adult=false`
     );
   }
 
   searchMovieDetails(movieID: number) {
     return this.http.get(
-      `https://api.themoviedb.org/3/movie/${movieID}?api_key=${this.apiKey}&language=en-US`
+      `${this.baseQueryUrl}/movie/${movieID}?api_key=${this.apiKey}&language=en-US`
     );
   }
 
@@ -84,28 +85,64 @@ export class MovieAPIService {
 
   getNowPlayingMovies() {
     // returns movies that are now playing
-    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`);
+    return this.http.get(`${this.baseQueryUrl}/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`);
   }
 
-  // gets release date info and sends it to search criteria.ts
-  getReleaseDatesURL(url: string) {
-    if (this.settings.releaseDate.start) {
-      url += "&release_date.gte=" + this.settings.releaseDate.start;
+  getFilteredMovies(minReleaseDate: string = '1800-01-01', maxReleaseDate: string = this.getISODateNoTime(new Date()),
+                    minRating: number = 0, genreIDs: any[] = []) {
+    // Oldest movie in API db as of 2020-02-07 is 1874-12-09
+    let queryString = `${this.baseFilterUrl}`
+    if (minReleaseDate !== '1800-01-01') {
+      queryString += `&release_date.gte=${minReleaseDate}`;
     }
-
-    if (this.settings.releaseDate.end) {
-      url += "&release_date.lte=" + this.settings.releaseDate.end;
+    if (maxReleaseDate !== this.getISODateNoTime(new Date())) {
+      queryString += `&release_date.lte=${maxReleaseDate}`;
     }
-
-    return url;
+    if (minRating > 0) {
+      queryString += `&vote_average.gte=${minRating}`;
+    }
+    if (genreIDs.length > 0) {
+      if (genreIDs.length === 1) {
+        queryString += `&with_genres=${genreIDs[0].name}`;
+      } else {
+        queryString += '&with_genres=';
+        for (const genreID of genreIDs) {
+          // Filtering out last one for different format
+          if (genreIDs.indexOf(genreID) !== (genreIDs.length - 1)) {
+            // %2C%20 is apparently how they do commas
+            queryString += `${genreIDs[0].name}%2C%20`;
+          } else {
+            queryString += `${genreIDs[0].name}`;
+          }
+        }
+      }
+    }
+    return this.http.get(queryString);
   }
 
-  // get rating info and sends it to search criteria.ts
-  getRatingURL(url: string) {
-    if (this.settings.rating) {
-      // sets min rating
-      url += "&vote_average.gte" + this.settings.rating;
-    }
-    return url;
+  getISODateNoTime(newDate: Date): string {
+    return newDate.toISOString().substring(0, 10);
   }
+
+  // // gets release date info and sends it to search criteria.ts
+  // getReleaseDatesURL(url: string) {
+  //   if (this.settings.releaseDate.start) {
+  //     url += "&release_date.gte=" + this.settings.releaseDate.start;
+  //   }
+
+  //   if (this.settings.releaseDate.end) {
+  //     url += "&release_date.lte=" + this.settings.releaseDate.end;
+  //   }
+
+  //   return url;
+  // }
+
+  // // get rating info and sends it to search criteria.ts
+  // getRatingURL(url: string) {
+  //   if (this.settings.rating) {
+  //     // sets min rating
+  //     url += "&vote_average.gte" + this.settings.rating;
+  //   }
+  //   return url;
+  // }
 }
