@@ -11,11 +11,13 @@ export class Movie implements IMovieInfo {
     rating: string;
     genreIDs: number[] = [];
     length: string;
+    backdropPath: string;
 
     constructor(srcMovie: any) {
         this.title = srcMovie.title;
         this.id = srcMovie.id;
         this.posterPath = srcMovie.poster_path;
+        this.backdropPath = srcMovie.backdrop_path;
         this.overview = srcMovie.overview;
         this.releaseDate = srcMovie.release_date;
         this.rating = srcMovie.vote_average;

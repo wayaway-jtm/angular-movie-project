@@ -1,23 +1,26 @@
 div {
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
 input {
   border: 1px solid black;
   height: 2rem;
-  width: -webkit-fill-available;
+  width: 100%;
   padding-left: 0.5vw;
   border-radius: 5%;
 }
 
 .searchBar {
   display: flex;
+  min-width: 200px;
 }
 
 button {
   height: 36px;
   width: 70px;
   color: #e84f4f;
+  background-color: #181818;
+  border: none;
 }
 
 .sideMenu {
@@ -25,29 +28,22 @@ button {
   flex-direction: column;
 }
 
-.filterButton {
-  background-color: #181818;
-  border: 0px;
-}
-
-.closeButton {
+.buttonContainer {
   align-self: flex-end;
   position: fixed;
   top: 3%;
   left: 220px;
+  display: flex;
+  flex-direction: column;
 }
-
-.xBtn {
-  border: 0px;
-  font-size: 2rem;
-  background-color: black;
-  opacity: 0.9;
-  color: #e84f4f;
-  width: 0;
+.submitButton {
+  width: 10px;
+  height: 10px;
 }
 
 ul {
   padding-left: 0;
+  flex-direction: column;
 }
 
 li {
@@ -59,11 +55,15 @@ li {
 }
 
 .calendar {
-  width: 115px;
+  width: 60%;
+  text-align: center;
 }
 
 .genreTypes {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 50%;
 }
 
 .genreLists {
@@ -73,28 +73,65 @@ li {
 
 /* The sidebar menu */
 .sidenav {
-  height: 100%;
-  /* Full-height: remove this if you want "auto" height */
-  width: 255px;
-  /* Set the width of the sidebar */
-  padding-left: 2vw;
-  position: fixed;
-  /* Fixed Sidebar (stay in place on scroll) */
+  height: 60%;
+  width: 98%;
+  border: 3px solid white;
+  position: absolute;
   z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
+  top: 110px;
+  left: 1%;
   background-color: black;
-  /* Black */
   color: #ffd983;
   overflow-x: hidden;
-  /* Disable horizontal scroll */
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#filter-options {
+  display: flex;
+}
+
+.filter-type {
+  width: 33%;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  flex-grow: 1;
+  width: auto;
+}
+
+label {
+  width: 50%;
+}
+
+label p {
+  margin: 0;
+}
+
+#filterBtn {
+  border: 0px;
+  border-radius: 10px;
+  background-color: #e84f4f;
+  color: #ffd983;
+  width: 20%;
+  height: 13%;
+  font-size: 1.5rem;
+  align-self: center;
+}
+
+#genreBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ /* only used on mobile devices */
+#xBtn {
+  display: none;
 }
 
 /* The navigation menu links */
@@ -117,44 +154,85 @@ li {
   /* Same as the width of the sidebar */
   padding: 0px 10px;
 }
+/* Star rating CSS */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1.3em;
+  justify-content: space-around;
+  padding: 0;
+  text-align: center;
+}
+
+.star-rating input {
+  /* display: none; */
+  height: 0px;
+}
+
+.star-rating input::after {
+  content: '\2605';
+  color: #ccc;
+  display: block;
+  font-size: 2rem;
+}
+
+/* .star-rating input:hover::after {
+  color: #fc0;
+}
+
+.star-rating input:hover ~ input::after {
+  color: #fc0;
+} */
+
+.star-rating :checked::after,
+.star-rating :checked ~ input::after {
+  color: #f90;
+}
+
+.star-rating input:hover::after,
+.star-rating input:hover ~ input::after {
+  color: #fc0;
+}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 750px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-
   .sidenav a {
     font-size: 18px;
   }
 }
 
-/* Star rating CSS */
-.star-rating {
-  border: solid 1px #ccc;
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 1.5em;
-  justify-content: space-around;
-  padding: 0 0.2em;
-  text-align: center;
-  width: 5em;
-}
+@media screen and (max-width: 510px) {
+  .sidenav {
+    height: 100%;
+    width: 98%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: #ffd983;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.star-rating input {
-  display: none;
-}
-
-.star-rating label {
-  color: #ccc;
-  cursor: pointer;
-}
-
-.star-rating :checked~label {
-  color: #f90;
-}
-
-.star-rating label:hover,
-.star-rating label:hover~label {
-  color: #fc0;
+  #genreBox {
+    padding-top: 25px;
+  }
+  #filterBtn {
+    top: 3%;
+    left: 70%;
+    width: 20%;
+    height: 8%;
+    font-size: 1.1rem;
+  }
+  #xBtn {
+    display: inline;
+    position: absolute;
+    top: 3%;
+    left: 6%;
+  }
 }

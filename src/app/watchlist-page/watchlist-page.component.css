@@ -6,6 +6,7 @@ header {
 a {
     text-decoration: none;
 }
+
 h2 {
     color: #FFD983;
 font-size: 4rem;
@@ -14,6 +15,13 @@ font-family: 'Bebas Neue';
 text-decoration: none;
 width: 100%;
 text-align: center;
+}
+
+.watchlist-container{
+    width: 50%;
+    height: 50%;
+    background-color: grey;
+    max-width: 70vw;
 }
 
 
