@@ -33,11 +33,11 @@ import { EastereggComponent } from './easteregg/easteregg.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   entryComponents: [
     EastereggComponent
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
