@@ -153,10 +153,16 @@ span{
     }
 }
 
+@media (max-width: 942px) {
+    .overview {
+        height: 90px;
+    }
+}
+
 @media (max-width: 823px) {
     .headDetails {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
 
@@ -166,10 +172,6 @@ span{
 }
 
 @media (max-width: 750px) {
-    #modal-content {
-        height: 80vh;
-    }
-
     .title {
         font-size: 1.5rem;
         padding-top: 20px;
@@ -179,11 +181,24 @@ span{
         height: 130px;
     }
 }
+
 @media (max-width: 571px) {
     .overview {
         font-size: 1rem;
     }
 }
+
+@media (max-width: 519px) {
+    .headDetails {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .spaces {
+        padding: 2px;
+    }
+}
+
 @media (max-width: 494px) {
     .overview {
         font-size: 1rem;
