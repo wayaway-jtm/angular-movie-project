@@ -1,8 +1,27 @@
+body {
+    width: 100vw;
+}
+.error {
+    font-size: 3rem;
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.verbiage {
+width: 65%;
+padding: 0px;
+margin: 0px;
+}
+
 .grid-layout {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;}
+    justify-content: center;
+}
 
 .grid-item {
     text-align: center;

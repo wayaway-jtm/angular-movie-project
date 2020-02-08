@@ -1,5 +1,11 @@
+<body>
+    <div class="error" *ngIf="movieList.length === 0" >
+        <div class="verbiage">Sorry, we don't have any movies to match your selection</div>
+    </div>
     <ul class="grid-layout">
         <li *ngFor="let movie of movieList" class="grid-item">
             <app-movie [srcMovie]="movie"></app-movie>
         </li>
+        
     </ul>
+</body>
