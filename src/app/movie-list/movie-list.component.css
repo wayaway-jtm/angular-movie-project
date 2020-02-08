@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;}
+    justify-content: center;
+    flex-grow: 1;
+}
 
 .grid-item {
     text-align: center;
@@ -13,8 +15,15 @@ li {
     list-style-type: none;
     padding-bottom: 15px;
     width: 25vw;
+    flex-basis: 32%;
 }
 
 ul {
     padding: 0;
+}
+
+@media (max-width: 510px) {
+    li {
+        flex-basis: 48%;
+    }
 }
