@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 
 
@@ -36,7 +36,7 @@ import { EastereggComponent } from './easteregg/easteregg.component';
     MatDialogModule
   ],
   entryComponents: [
-    EastereggComponent
+    EastereggComponent,
     FormsModule
   ],
   providers: [],
