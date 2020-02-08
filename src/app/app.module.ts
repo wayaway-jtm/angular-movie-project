@@ -27,17 +27,16 @@ import { EastereggComponent } from './easteregg/easteregg.component';
     ModalComponent,
     EastereggComponent
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   entryComponents: [
-    EastereggComponent,
-    FormsModule
+    EastereggComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
