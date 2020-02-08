@@ -8,6 +8,11 @@ button {
 }
 
 header {
+  display: flex;
+  width: 100%;
+}
+main {
+  display: flex;
   width: 100%;
 }
 
@@ -32,6 +37,8 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  padding-left: 0px;
+  width: 100%;
 }
 
 li {
@@ -41,7 +48,7 @@ li {
 }
 
 .kernel-container {
-  width: fit-content;
+  width: 189px;
 }
 
 .urkel-glasses {
@@ -62,12 +69,16 @@ font-size: 1.5rem;
 }
 
 .search-bar {
-  width: 30%;
+  width: 200%;
   text-align: center;
 }
 
-@media (min-width: 720px) {
-  main {
-    width: 80vw;
+ /* sets header for mobile display with search bar below logo and watchlist button */
+@media (max-width: 510px) {
+  .search-bar {
+    position: absolute;
+    top: 110px;
+    width: 288px;
+    margin: inherit;
   }
 }

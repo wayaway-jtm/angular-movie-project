@@ -1,56 +1,40 @@
 <div class="searchBar">
   <div class="sideMenu">
-    <button (click)="toggleSide()" class="filterButton"><i class="fas fa-sliders-h fa-3x"></i></button>
+    <button (click)="toggleSide()" class="filterButton">
+      <i class="fas fa-sliders-h fa-3x"></i>
+    </button>
     <!-- Side Nav Filter starts here -->
-    <div *ngIf="dropDown" class="sidenav">
-      <label class="closeButton">
-        <button (click)="closeSide()" class="xBtn"><i class="far fa-times-circle"></i></button>
-      </label>
-      <h1>Genre</h1>
-      <div class="genreTypes">
-        <div class="genreLists">
-          <span>Action<br><input type="checkbox" /></span>
-          <span>Comedy<br><input type="checkbox" /></span>
-          <span>Adventure<br><input type="checkbox" /></span>
-          <span>Crime<br><input type="checkbox" /></span>
-        </div>
-        <div class="genreLists">
-          <span>Drama<br><input type="checkbox" /></span>
-          <span>Epics<br><input type="checkbox" /></span>
-          <span>Thriller<br><input type="checkbox" /></span>
-          <span>Musicals/Dance<br><input type="checkbox" /></span>
-        </div>
-      </div>
-      <ul>
-        <li>
-          <h1>Rating</h1>
-        </li>
-        <li>
-          <div class="star-rating">
-            <input type="radio" id="5-stars" name="rating" value="5" />
-            <label for="5-stars" class="star">&#9733;</label>
-            <input type="radio" id="4-stars" name="rating" value="4" />
-            <label for="4-stars" class="star">&#9733;</label>
-            <input type="radio" id="3-stars" name="rating" value="3" />
-            <label for="3-stars" class="star">&#9733;</label>
-            <input type="radio" id="2-stars" name="rating" value="2" />
-            <label for="2-stars" class="star">&#9733;</label>
-            <input type="radio" id="1-star" name="rating" value="1" />
-            <label for="1-star" class="star">&#9733;</label>
+    <div *ngIf="sideMenu" class="sidenav">
+      <section id="filter-options">
+        <div id="genreBox" class="filter-type genre">
+          <h1>Genre</h1>
+          <div class="genreTypes">
+            <label *ngFor="let genre of genres">
+              <p>{{genre.name}}</p>
+              <input type="checkbox" [(ngModel)]="genre.checked" />
+            </label>
           </div>
-        </li>
-      </ul>
-      <ul>
-        <li>
+        </div>
+        <div class="filter-type rating">
+          <h1>Rating</h1>
+          <div class="star-rating">
+            <input type="radio" name="rating" *ngFor="let star of ratings" class="star" />
+          </div>
+        </div>
+        <div class="filter-type dates">
           <h1>Release Date</h1>
-        </li>
-        <li class="bottomInput">
-          <input type="date" class="calendar" />
-          <p>thru</p>
-          <input type="date" class="calendar" />
-        </li>
-      </ul>
+          <div class="bottomInput">
+            <input type="date" class="calendar" [(ngModel)]="minDate" />
+            <p>thru</p>
+            <input type="date" class="calendar" [(ngModel)]="maxDate" />
+          </div>
+        </div>
+      </section>
+      <button id="filterBtn" (click)="filter()">Filter</button>
     </div>
   </div>
-  <input type="text" placeholder="Movie Title" />
+  <input type="text" placeholder="Movie Title" [(ngModel)]="movieTitle" />
+  <button type="button" (click)="titleSearch()" >
+    <img src="../../assets/magnifying-glass.png" alt="Search" id="search-icon">
+  </button>
 </div>

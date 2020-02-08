@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,10 +33,11 @@ import { EastereggComponent } from './easteregg/easteregg.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule,
+    MatDialogModule
   ],
   entryComponents: [
     EastereggComponent
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
