@@ -41,7 +41,14 @@
 }
 
 img {
-    width: 40%;
+    width: 38%;
+}
+/* tablet */
+@media (max-height: 712px) {
+    img {
+        width: 30%;
+        height: 20%;
+    } 
 }
 
 span{
@@ -181,6 +188,16 @@ span{
         height: 130px;
     }
 }
+@media (max-width: 822px) {
+    .headDetails {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .spaces {
+        padding: 2px;
+    }
+}
 
 @media (max-width: 571px) {
     .overview {
@@ -212,24 +229,11 @@ span{
     #star {
         font-size: 1rem;
     }
-
-    .length {
-        border: none;
-        background-color: red;
-    }
-    
-    .date {
-        border: none;
-        background-color: red;
-    }
     
     .genre {
         display: flex;
         justify-content: center;
-        line-height: 1.5rem;
-        border: none;
-        background-color: red;
-        
+        line-height: 1.5rem;        
     }
     .headDetails {
         display: flex;
