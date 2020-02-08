@@ -3,7 +3,7 @@
     <!-- no title???  -->
     <!-- <h1>{{ title }}</h1> -->
     <section id="poster-wrapper">
-      <img id="movie-poster" src="{{ posterPath }}" alt="" />
+      <img id="movie-poster" src="{{ posterPath }}" (click)="toggleModal()" alt="" />
     </section>
     <p class="info-header">
       <span id="rating-text">
@@ -15,3 +15,4 @@
     </p>
   </div>
 </div>
+<app-modal [srcMovie]="srcMovie" *ngIf="showModal"></app-modal>

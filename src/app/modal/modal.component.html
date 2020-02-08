@@ -1,21 +1,12 @@
-<p>modal works!</p>
-<ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-title">Profile update</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    </div>
-  </ng-template>
-  
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content, any)">Launch demo modal</button>
-  
-  <hr>
-  
-  <pre>{{closeResult}}</pre>
+<div id="modal-wrapper">
+  <section id="modal-content">
+    <div id="details">
+      <a class="btn close" (click)="close()">⌽</a>
+      <p class="title"><span>{{ title }}</span> <span id="rating" id="star"> &#9733; {{ rating }}</span><span class="ten">/10</span></p>
+      <p class="length"><span id="length"> {{ length }} minutes  |  ({{ releaseDate }})  |  Genre: {{ genreNames }}</span></p>
+      <p class="overview"><span> {{ overview }}</span></p>
+    </div> 
+    <img id="movie-poster" src="{{ posterPath }}" alt="" />
+    <img id="backdrop" src="{{ backdrop_path }}" alt="" />
+  </section>
+</div>

@@ -16,12 +16,17 @@ export class MovieComponent implements OnInit {
   posterPath: string;
   overview: string;
   releaseDate: string;
-  rating: string;
+  rating: number;
   genreIDs: number[] = [];
   genreNames: string[] = [];
   length: string;
+  showModal: boolean = false;
   @Input() srcMovie: any;
 
+
+  toggleModal() {
+    this.showModal = true;
+  }
 
   isSaved() {
     return this.watchlistService.hasMovieId(this.id);
@@ -43,36 +48,10 @@ export class MovieComponent implements OnInit {
     this.id = this.srcMovie.id;
     this.overview = this.srcMovie.overview;
     this.releaseDate = this.srcMovie.releaseDate;
-    this.setRating();
-    this.setPosterPath();
-    this.setGenres();
+    this.rating = this.movieApiService.getRating(this.srcMovie);
+    this.posterPath = this.movieApiService.getPosterPath(this.srcMovie);
+    this.genreIDs = this.movieApiService.getGenreIds(this.srcMovie);
+    this.genreNames = this.movieApiService.getGenreNames(this.genreIDs);
     this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
-  }
-
-  setRating() {
-    if (isUndefined(this.srcMovie.rating)) {
-      this.rating = this.srcMovie.vote_average;
-    } else {
-      this.rating = this.srcMovie.rating;
-    }
-  }
-
-  setPosterPath() {
-    if (isUndefined(this.srcMovie.posterPath)) {
-      this.posterPath = this.movieApiService.getPosterSrc(this.srcMovie.poster_path);
-    } else {
-      this.posterPath = this.movieApiService.getPosterSrc(this.srcMovie.posterPath);
-    }
-  }
-
-  setGenres() {
-    if (isUndefined(this.srcMovie.genreIDs)) {
-      this.genreIDs = this.srcMovie.genre_ids;
-    } else {
-      this.genreIDs = this.srcMovie.genreIDs;
-    }
-    for (const genre of this.genreIDs) {
-      this.genreNames.push(this.movieApiService.getMovieGenreName(genre));
-    }
   }
 }

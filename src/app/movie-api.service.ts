@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { isUndefined } from 'util';
 
 @Injectable({
   providedIn: "root"
@@ -27,25 +28,6 @@ export class MovieAPIService {
         `${this.baseQueryUrl}/genre/movie/list?api_key=56e67f6023e668760235d525751be987&language=en-US`
       )
       .subscribe((data: any) => (this.genreContainer = data.genres));
-
-    // // all of the search criteria
-    // this.settings = {
-    //   genres: {
-    //     thriller: null,
-    //     action: null,
-    //     adventure: null,
-    //     comedy: null,
-    //     crime: null,
-    //     drama: null,
-    //     epics: null,
-    //     musicals: null
-    //   },
-    //   rating: null,
-    //   releaseDate: {
-    //     start: null,
-    //     end: null
-    //   }
-    // };
   }
 
   // calls movie api
@@ -79,6 +61,19 @@ export class MovieAPIService {
     return String(`${this.imgQueryBase}/${this.poster_sizes[width]}/${imgUrl}`);
   }
 
+  // mattes edits
+  getBackdropImg(imgURL: string, width: number = 3) {
+    // Filtering out invalid width numbers
+    if (!(width < 0 || width > (this.poster_sizes.length - 1))) {
+      return this.http.get(`${this.imgQueryBase}/w${width}${imgURL}`)
+    }
+  }
+
+  // matts edits
+  getBackdropSrc(imgUrl: string, width: number = 3) {
+    return String(`${this.imgQueryBase}/${this.poster_sizes[width]}/${imgUrl}`);
+  }
+
   getMovieGenreName(genreID: number) {
     return this.genreContainer.find(x => x.id === genreID).name;
   }
@@ -89,7 +84,7 @@ export class MovieAPIService {
   }
 
   getFilteredMovies(minReleaseDate: string = '1800-01-01', maxReleaseDate: string = this.getISODateNoTime(new Date()),
-                    minRating: number = 0, genreIDs: any[] = []) {
+    minRating: number = 0, genreIDs: any[] = []) {
     // Oldest movie in API db as of 2020-02-07 is 1874-12-09
     let queryString = `${this.baseFilterUrl}`
     if (minReleaseDate !== '1800-01-01') {
@@ -128,25 +123,35 @@ export class MovieAPIService {
     return newDate.toISOString().substring(0, 10);
   }
 
-  // // gets release date info and sends it to search criteria.ts
-  // getReleaseDatesURL(url: string) {
-  //   if (this.settings.releaseDate.start) {
-  //     url += "&release_date.gte=" + this.settings.releaseDate.start;
-  //   }
+  getRating(movie: any): number {
+    if (isUndefined(movie.rating)) {
+      return movie.vote_average;
+    } else {
+      return movie.rating;
+    }
+  }
 
-  //   if (this.settings.releaseDate.end) {
-  //     url += "&release_date.lte=" + this.settings.releaseDate.end;
-  //   }
+  getPosterPath(movie: any): string {
+    if (isUndefined(movie.posterPath)) {
+      return this.getPosterSrc(movie.poster_path);
+    } else {
+      return this.getPosterSrc(movie.posterPath);
+    }
+  }
 
-  //   return url;
-  // }
+  getGenreIds(movie: any): any[] {
+    if (isUndefined(movie.genreIDs)) {
+      return movie.genre_ids;
+    } else {
+      return movie.genreIDs;
+    }
+  }
 
-  // // get rating info and sends it to search criteria.ts
-  // getRatingURL(url: string) {
-  //   if (this.settings.rating) {
-  //     // sets min rating
-  //     url += "&vote_average.gte" + this.settings.rating;
-  //   }
-  //   return url;
-  // }
+  getGenreNames(genres: any[]): string[] {
+    let genreNames = [];
+    for (const genre of genres) {
+      genreNames.push(this.getMovieGenreName(genre));
+    }
+    return genreNames;
+  }
 }
