@@ -43,7 +43,7 @@ img {
     img {
         width: 30%;
         height: 20%;
-    }
+    } 
 }
 
 span {
@@ -194,6 +194,10 @@ span {
   .overview {
     font-size: 1rem;
   }
+  
+  .genre {
+      font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 519px) {
@@ -213,40 +217,22 @@ span {
     height: 200px;
   }
 
-  .title {
-    font-size: 1rem;
-    padding-top: 30px;
-  }
-
-  #star {
-    font-size: 1rem;
-  }
-
-  .length {
-    border: none;
-    background-color: red;
-  }
-
-  .date {
-    border: none;
-    background-color: red;
-  }
-
-  .genre {
-    display: flex;
-    justify-content: center;
-    line-height: 1.5rem;
-    border: none;
-    background-color: red;
-  }
-
-  .headDetails {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    text-align: center;
-    padding-left: 0px;
-  }
+    #star {
+        font-size: 1rem;
+    }
+    
+    .genre {
+        display: flex;
+        justify-content: center;
+        line-height: 1.5rem;        
+    }
+    .headDetails {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+        padding-left: 0px;
+    }
 }
 
 .ten {
