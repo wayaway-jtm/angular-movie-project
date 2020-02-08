@@ -21,7 +21,7 @@ export class ModalComponent {
   backdropPath: string;
 
 
-  show : boolean = false;
+  show: boolean = false;
   @Output() toggle = new EventEmitter()
   @Input() srcMovie: Movie;
 
@@ -37,13 +37,9 @@ export class ModalComponent {
     this.genreIDs = this.movieApiService.getGenreIds(this.srcMovie);
     this.genreNames = this.movieApiService.getGenreNames(this.genreIDs);
     this.movieApiService.searchMovieDetails(this.id).subscribe((data: any) => this.length = data.runtime);
-
   }
 
   toggleModal() {
     this.toggle.emit()
-    console.log("hi");
   }
-
-
 }
