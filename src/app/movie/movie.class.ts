@@ -8,7 +8,7 @@ export class Movie implements IMovieInfo {
     posterPath: string;
     overview: string;
     releaseDate: string;
-    rating: string;
+    rating: number;
     genreIDs: number[] = [];
     length: string;
     backdropPath: string;

@@ -1,7 +1,26 @@
-<a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
-<h1>Your Watchlist</h1>
-    <main>
-      <div class="watchlist-container">
-        <movie-list [movieList]='watchlistService.getSavedMovies()'></movie-list>
-      </div>
-    </main>
+<body>
+<header>
+  <ul>
+    <li><a [routerLink]="['/home']" routerLinkActive="router-link-active"><img class="kernel-logo"
+      src="/assets/kernel-logo.png"></a></li>
+
+  </ul>
+
+</header>
+<a class="watchlist-container"[routerLink]="['/watchlist-page']" routerLinkActive="router-link-active">
+  <h2>Welcome to Your Watchlist</h2>
+</a>
+
+<div class="intro-copy">
+  <h3>Did you do that?</h3>
+  <p>Whoa mama, yes you did! Welcome to your watchlist, the hub for the movies you're itching to see. Like a moth to a
+    flame. A bee to a blossom. A mouse to cheese.</p>
+</div>
+
+
+<main>
+  <div class="watchlist-container">
+    <movie-list [movieList]='watchlistService.getSavedMovies()'></movie-list>
+  </div>
+</main>
+</body>

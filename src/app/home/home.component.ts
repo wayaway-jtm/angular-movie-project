@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  getUserSearch(userResults: Movie[]) {
+    this.movies = userResults;
+  }
+
   // calls the movie api from movie-api service
   callMovies() {
     this.movieApiService.fetchMovieApi().subscribe((data: any) => {

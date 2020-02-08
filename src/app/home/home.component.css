@@ -1,57 +1,91 @@
 button {
-    font-size: 2rem;
-    border: 3px solid blue;
-    border-radius: 5px;
-    background-color: #0099ff;
-    width: 200px;
-    height: 100px;
+  font-size: 2rem;
+  border: 3px solid blue;
+  border-radius: 5px;
+  background-color: #0099ff;
+  width: 200px;
+  height: 100px;
 }
 
 header {
-    width: 100%;
-    
+  display: flex;
+  width: 100%;
+}
+main {
+  display: flex;
+  width: 100%;
 }
 
 .watchlist {
-    font-family: 'Bebas Neue', cursive;
-    text-decoration: none;
-    color: whitesmoke;
-    font-size: 1.5rem;
-    
+  font-family: 'Bebas Neue', cursive;
+  text-decoration: none;
+  color: #ffd983;
+  font-size: 1.5rem;
 }
+
+/* a {
+  color: #E84F4F;
+} */
+
 main {
-    width: 90vw;
-    margin: auto;
+  width: 90vw;
+  margin: auto;
 }
+
 ul {
-    display: flex;
-    justify-content: center;   
-    align-items: center; 
-    flex-direction: row;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 0px;
+  width: 100%;
 }
+
 li {
-    list-style-type: none;
-    color: black;
-    margin: 5px;
-   
+  list-style-type: none;
+  color: black;
+  margin: 5px;
 }
+
 .kernel-container {
-width: fit-content;
+  width: 189px;
 }
 
-.kernel-logo {
-    width: 30%;
+.urkel-glasses {
+width: 100px;
 }
+
+.watchlist-container{
+display: flex; 
+flex-direction: column; 
+align-items: center;
+height: 100px;
+font-family: 'Bebas Neue', cursive;
+text-decoration: none;
+color: whitesmoke;
+font-size: 1.5rem;
+/* position: relative; */
+}
+
+movie-list {
+  flex-grow: 1;
+}
+
+main {
+  display: flex;
+}
+
 .search-bar {
-    width: 30%;
-    text-align: center;
+  width: 200%;
+  text-align: center;
 }
 
-@media (min-width: 720px) {
-    main {
-        width: 80vw;
-    }
-
-
+ /* sets header for mobile display with search bar below logo and watchlist button */
+@media (max-width: 510px) {
+  .search-bar {
+    position: absolute;
+    top: 110px;
+    width: 288px;
+    margin: inherit;
+  }
 }
