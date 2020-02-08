@@ -65,7 +65,14 @@ text-decoration: none;
 color: whitesmoke;
 font-size: 1.5rem;
 /* position: relative; */
+}
 
+movie-list {
+  flex-grow: 1;
+}
+
+main {
+  display: flex;
 }
 
 .search-bar {
