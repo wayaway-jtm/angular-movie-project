@@ -77,6 +77,8 @@ span{
     padding-right: 20px;
     font-family: "lato", sans-serif;
     color: black;
+    overflow-y: scroll;
+    height: 400px;
 
 }
 
@@ -131,10 +133,12 @@ span{
 @media (max-width: 1046px) {
     .title {
         font-size: 1.5rem;
+        padding-top: 20px;
     }
     .overview {
         font-size: 1.2rem;
         text-align: center;
+        height: 150px;
     }
 
     .dec-pic {
@@ -154,7 +158,10 @@ span{
         display: flex;
         flex-direction: column;
         text-align: center;
-    
+    }
+
+    .overview {
+        height: 90px;
     }
 }
 
@@ -169,6 +176,7 @@ span{
     }
     .overview {
         font-size: 1rem;
+        height: 130px;
     }
 }
 @media (max-width: 571px) {
@@ -179,10 +187,11 @@ span{
 @media (max-width: 494px) {
     .overview {
         font-size: 1rem;
+        height: 200px;
     }
     .title {
         font-size: 1rem;
-        padding-top: 5px;
+        padding-top: 30px;
     }
 
     #star {
