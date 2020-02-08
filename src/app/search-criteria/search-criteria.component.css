@@ -76,7 +76,7 @@ li {
   height: 60%;
   width: 98%;
   border: 3px solid white;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 110px;
   left: 1%;
