@@ -42,18 +42,18 @@ export class MovieAPIService {
     return String(`${this.imgQueryBase}/${this.poster_sizes[width]}/${imgUrl}`);
   }
 
-  // mattes edits
-  getBackdropImg(imgURL: string, width: number = 3) {
-    // Filtering out invalid width numbers
-    if (!(width < 0 || width > (this.poster_sizes.length - 1))) {
-      return this.http.get(`${this.imgQueryBase}/w${width}${imgURL}`)
-    }
-  }
+  // // mattes edits for backdrop img and src
+  // getBackdropImg(imgURL: string, width: number = 3) {
+  //   // Filtering out invalid width numbers
+  //   if (!(width < 0 || width > (this.poster_sizes.length - 1))) {
+  //     return this.http.get(`${this.imgQueryBase}/w${width}${imgURL}`)
+  //   }
+  // }
 
-  // matts edits
-  getBackdropSrc(imgUrl: string, width: number = 3) {
-    return String(`${this.imgQueryBase}/${this.poster_sizes[width]}/${imgUrl}`);
-  }
+  // // matts edits
+  // getBackdropSrc(imgUrl: string, width: number = 3) {
+  //   return String(`${this.imgQueryBase}/${this.poster_sizes[width]}/${imgUrl}`);
+  // }
 
   getMovieGenreName(genreID: number) {
     

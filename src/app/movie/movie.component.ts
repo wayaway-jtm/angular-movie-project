@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { IMovieInfo } from '../imovie-info';
 import { MovieAPIService } from '../movie-api.service';
+
 import { Movie } from './movie.class';
 import { WatchlistService } from '../watchlist.service';
 
@@ -19,13 +20,8 @@ export class MovieComponent implements OnInit {
   genreIDs: number[] = [];
   genreNames: string[] = [];
   length: string;
-  showModal: boolean = false;
+  show: boolean = false
   @Input() srcMovie: Movie;
-
-
-  toggleModal() {
-    this.showModal = true;
-  }
 
   isSaved() {
     return this.watchlistService.hasMovieId(this.id);
@@ -38,8 +34,13 @@ export class MovieComponent implements OnInit {
       this.watchlistService.removeMovie(movieId);
     }
 
+  
+
   }
 
+  toggleModal() {
+    this.show = !this.show;
+  }
   constructor(private movieApiService: MovieAPIService, private watchlistService: WatchlistService) { }
 
   ngOnInit() {

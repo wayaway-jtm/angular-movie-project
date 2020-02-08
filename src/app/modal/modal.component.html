@@ -1,12 +1,21 @@
 <div id="modal-wrapper">
   <section id="modal-content">
     <div id="details">
-      <a class="btn close" (click)="close()">⌽</a>
-      <p class="title"><span>{{ title }}</span> <span id="rating" id="star"> &#9733; {{ rating }}</span><span class="ten">/10</span></p>
-      <p class="length"><span id="length"> {{ length }} minutes  |  ({{ releaseDate }})  |  Genre: {{ genreNames }}</span></p>
+      <a (click)="toggleModal()" class="btn close" >⌽</a>
+      <p class="title"><span id="title">{{ title }}</span> <span id="rating" id="star"> &#9733;{{ rating }}</span><span class="ten">/10</span></p>
+      <section class="headDetails">
+      <p><span class="length">Minutes: {{ length }}</span></p>
+      <p><span class="date">Date: ({{ releaseDate }})</span></p>
+      <p><span class="genre">Genre: {{ genreNames }}</span></p>
+      </section>
+      <section class="dec-pic">
       <p class="overview"><span> {{ overview }}</span></p>
+      <img id="movie-poster" src="{{ posterPath }}" alt=""/>
+      </section>
     </div> 
-    <img id="movie-poster" src="{{ posterPath }}" alt="" />
-    <img id="backdrop" src="{{ backdrop_path }}" alt="" />
   </section>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div id='title'>
 </div>

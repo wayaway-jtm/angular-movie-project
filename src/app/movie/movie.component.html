@@ -14,4 +14,4 @@
     </p>
   </div>
 </div>
-<app-modal [srcMovie]="srcMovie" *ngIf="showModal"></app-modal>
+<app-modal [srcMovie]="srcMovie" (toggle)="toggleModal()" [ngClass]="{'showModal': show, 'hideModal': !show}"></app-modal>
