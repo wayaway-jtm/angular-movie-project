@@ -30,7 +30,7 @@ export class ModalComponent {
   ngOnInit() {
     this.title = this.srcMovie.title;
     this.id = this.srcMovie.id;
-    this.posterPath = this.movieApiService.getPosterSrc(this.srcMovie.posterPath);
+    this.posterPath = this.movieApiService.getPosterPath(this.srcMovie);
     this.overview = this.srcMovie.overview;
     this.releaseDate = this.srcMovie.releaseDate;
     this.rating = this.movieApiService.getRating(this.srcMovie);
