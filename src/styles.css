@@ -5,6 +5,7 @@ body {
   min-height: 100vh;
   background-color: #181818;
   margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .kernel-logo {
@@ -12,16 +13,8 @@ body {
   min-width: 200px;
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
 html,
 body {
   height: fit-content;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+

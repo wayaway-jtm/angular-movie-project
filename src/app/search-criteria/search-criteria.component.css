@@ -7,7 +7,7 @@ input {
   height: 2rem;
   width: 100%;
   padding-left: 0.5vw;
-  border-radius: 5%;
+  border-radius: 3px;
 }
 
 .searchBar {
@@ -75,7 +75,7 @@ button {
   width: 98%;
   font-size: 1.5rem;
   border: 3px solid white;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 110px;
   left: 1%;
@@ -197,7 +197,6 @@ label p {
   color: #fc0;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 750px) {
   .sidenav a {
     font-size: 18px;
