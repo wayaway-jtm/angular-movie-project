@@ -5,7 +5,7 @@ export interface IMovieInfo {
     posterPath: string;
     overview: string;
     releaseDate: string;
-    rating: string; // Is this supposed to be popularity or vote_average?
+    rating: number; // Is this supposed to be popularity or vote_average?
     genreIDs: number[];
     length: string;
 }

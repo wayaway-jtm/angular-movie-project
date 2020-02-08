@@ -48,6 +48,10 @@ button {
   padding-bottom: 55px;
 }
 
+#search-icon {
+  height: inherit;
+}
+
 .calendar {
   width: 60%;
   text-align: center;
@@ -71,7 +75,7 @@ button {
   width: 98%;
   font-size: 1.5rem;
   border: 3px solid white;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 110px;
   left: 1%;

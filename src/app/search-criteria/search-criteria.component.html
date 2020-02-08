@@ -43,5 +43,8 @@
       <button id="filterBtn" (click)="filter()">Filter</button>
     </div>
   </div>
-  <input type="text" placeholder="Movie Title" />
+  <input type="text" placeholder="Movie Title" [(ngModel)]="movieTitle" />
+  <button type="button" (click)="titleSearch()" >
+    <img src="../../assets/magnifying-glass.png" alt="Search" id="search-icon">
+  </button>
 </div>
