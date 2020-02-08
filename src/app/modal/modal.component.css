@@ -22,13 +22,10 @@
     top: 10%;
     left: 20%;
     width: 60vw;
-    height: 80vh;
+    height: 85vh;
     color: black;
     border-radius: 20px;
     border: 1px solid #E84F4F;
-    /* background: #0f0c29; 
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); */
     background-color: #333333;
     
 }
@@ -60,7 +57,6 @@ span{
 }
 
 #title {
-    text-decoration: underline;
     background: -webkit-linear-gradient(white, #38495a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -71,8 +67,8 @@ span{
     display: flex;
     flex-direction: row;
     align-self: center;
+    align-content: center;
     padding-left: 10px;
-    padding-top: 20px;
     font-family: "lato", sans-serif;
 
 }
@@ -133,9 +129,37 @@ span{
     flex-direction: row;
 }
 
-@media (max-width: 1199px) { 
+/* @media (max-width: 1199px) { 
     img {
         width: 37%;
+    }
+} */
+
+@media (max-width: 1046px) {
+    .overview {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .dec-pic {
+        display: flex;
+        flex-direction: column;
+
+    }
+    img {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+}
+
+@media (max-width: 823px) {
+    .headDetails {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        line-height: 1px;
+    
     }
 }
 
@@ -145,48 +169,22 @@ span{
     }
 
     .title {
-        padding-top: 30px;
         font-size: 1.5rem;
+        padding-top: 20px;
     }
-    .headDetails {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        padding-top: 1px;
-        line-height: 1px;
-    
-    }
-}
-
-@media (max-width: 633px) {
-    .dec-pic {
-        display: flex;
-        flex-direction: column;
-    }
-
     .overview {
         font-size: 1rem;
-        text-align: center;
-    }
-
-    img {
-        display: flex;
-        justify-content: center;
-        align-self: center;
     }
 }
-
-@media (max-width: 390px) {
-    
-    .headDetails {
-        display: flex;
-        justify-content: center;
-        align-self: auto;
-        text-align: center;
-        padding-left: 0px;
-
+@media (max-width: 571px) {
+    .overview {
+        font-size: 1rem;
     }
-
+}
+@media (max-width: 494px) {
+    .overview {
+        font-size: 1rem;
+    }
     .title {
         font-size: 1rem;
     }
@@ -213,6 +211,18 @@ span{
         background-color: red;
         
     }
+}
+
+@media (max-width: 410px) {
+    .headDetails {
+        display: flex;
+        justify-content: center;
+        align-self: auto;
+        text-align: center;
+        padding-left: 0px;
+
+    }
+
 }
 
 .ten {
