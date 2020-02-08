@@ -5,12 +5,17 @@
     </button>
     <!-- Side Nav Filter starts here -->
     <div *ngIf="sideMenu" class="sidenav">
+      <label class="closeButton">
+        <button (click)="closeSide()" id="xBtn">
+          <i class="far fa-times-circle fa-3x"></i>
+        </button>
+      </label>
       <section id="filter-options">
         <div id="genreBox" class="filter-type genre">
           <h1>Genre</h1>
           <div class="genreTypes">
             <label *ngFor="let genre of genres">
-              <p>{{genre.name}}</p>
+              <p>{{ genre.name }}</p>
               <input type="checkbox" [(ngModel)]="genre.checked" />
             </label>
           </div>
@@ -18,7 +23,12 @@
         <div class="filter-type rating">
           <h1>Rating</h1>
           <div class="star-rating">
-            <input type="radio" name="rating" *ngFor="let star of ratings" class="star" />
+            <input
+              type="radio"
+              name="rating"
+              *ngFor="let star of ratings"
+              class="star"
+            />
           </div>
         </div>
         <div class="filter-type dates">
