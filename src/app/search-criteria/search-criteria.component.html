@@ -5,39 +5,32 @@
     </button>
     <!-- Side Nav Filter starts here -->
     <div *ngIf="sideMenu" class="sidenav">
-      <button id="xBtn" (click)="closeSide()" ><i class="fas fa-times fa-4x"></i></button>
-      <div id="genreBox">
-        <h1>Genre</h1>
-        <div class="genreTypes">
-          <label *ngFor="let genre of genres">
-            <p>{{genre.name}}</p>
-            <input type="checkbox" [(ngModel)]="genre.checked" />
-          </label>
+      <section id="filter-options">
+        <div id="genreBox" class="filter-type genre">
+          <h1>Genre</h1>
+          <div class="genreTypes">
+            <label *ngFor="let genre of genres">
+              <p>{{genre.name}}</p>
+              <input type="checkbox" [(ngModel)]="genre.checked" />
+            </label>
+          </div>
         </div>
-      </div>
-      <ul>
-        <li>
+        <div class="filter-type rating">
           <h1>Rating</h1>
-        </li>
-        <li>
           <div class="star-rating">
             <input type="radio" name="rating" *ngFor="let star of ratings" class="star" />
           </div>
-        </li>
-        <li>
-          <button id="filterBtn" (click)="filter()">Filter</button>
-        </li>
-      </ul>
-      <ul>
-        <li>
+        </div>
+        <div class="filter-type dates">
           <h1>Release Date</h1>
-        </li>
-        <li class="bottomInput">
-          <input type="date" class="calendar" [(ngModel)]="minDate" />
-          <p>thru</p>
-          <input type="date" class="calendar" [(ngModel)]="maxDate" />
-        </li>
-      </ul>
+          <div class="bottomInput">
+            <input type="date" class="calendar" [(ngModel)]="minDate" />
+            <p>thru</p>
+            <input type="date" class="calendar" [(ngModel)]="maxDate" />
+          </div>
+        </div>
+      </section>
+      <button id="filterBtn" (click)="filter()">Filter</button>
     </div>
   </div>
   <input type="text" placeholder="Movie Title" />

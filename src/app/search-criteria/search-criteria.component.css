@@ -55,14 +55,15 @@ li {
 }
 
 .calendar {
-  width: 115px;
+  width: 60%;
+  text-align: center;
 }
 
 .genreTypes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 30%;
+  max-width: 50%;
 }
 
 .genreLists {
@@ -84,7 +85,24 @@ li {
   overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+}
+
+#filter-options {
+  display: flex;
+}
+
+.filter-type {
+  width: 33%;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: auto;
 }
 
 label {
@@ -96,9 +114,6 @@ label p {
 }
 
 #filterBtn {
-  position: absolute;
-  top: 75%;
-  left: 40%;
   border: 0px;
   border-radius: 10px;
   background-color: #e84f4f;
@@ -106,6 +121,7 @@ label p {
   width: 20%;
   height: 13%;
   font-size: 1.5rem;
+  align-self: center;
 }
 
 #genreBox {
@@ -144,7 +160,7 @@ label p {
   flex-direction: row-reverse;
   font-size: 1.3em;
   justify-content: space-around;
-  padding: 0 0.2em;
+  padding: 0;
   text-align: center;
 }
 
