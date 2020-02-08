@@ -13,8 +13,8 @@ body {
 .kernel-logo {
     width: 30%;
     min-width: 200px;
-  
 }
+/* }
 .name-container {
     display: flex; 
     flex-direction: row;
@@ -66,4 +66,6 @@ body {
     
     .social-icons {
       height: 75px;
-    }
+    } */
+/* html, body { height: 100%; min-height: 100vh} */
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
