@@ -73,12 +73,12 @@ li {
 /* The sidebar menu */
 .sidenav {
   height: 60%;
-  width: 101%;
+  width: 98%;
   border: 3px solid white;
   position: absolute;
   z-index: 1;
   top: 110px;
-  left: 0;
+  left: 1%;
   background-color: black;
   color: #ffd983;
   overflow-x: hidden;
