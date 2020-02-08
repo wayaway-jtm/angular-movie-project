@@ -9,20 +9,20 @@ import { Movie } from '../movie/movie.class';
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  sideMenu : boolean = false;
-  genreID : [];
-  releaseDateUrl : string;
-  ratingID : string;
-  searchResults: Movie[] = [];
+  sideMenu: boolean = false;
+  genreID: [];
+  releaseDateUrl: string;
+  ratingID: string;
+  searchResults: any[] = [];
   genres = [
-    { name: 'Action', checked: false},
-    { name: 'Comedy', checked: false},
-    { name: 'Adventure', checked: false},
-    { name: 'Crime', checked: false},
-    { name: 'Drama', checked: false},
-    { name: 'Epics', checked: false},
-    { name: 'Thriller', checked: false},
-    { name: 'Musicals/Dance', checked: false},
+    { name: 'Action', checked: false },
+    { name: 'Comedy', checked: false },
+    { name: 'Adventure', checked: false },
+    { name: 'Crime', checked: false },
+    { name: 'Drama', checked: false },
+    { name: 'Epics', checked: false },
+    { name: 'Thriller', checked: false },
+    { name: 'Musicals/Dance', checked: false },
   ];
   ratings = [
     { value: 10, checked: false },
@@ -38,10 +38,11 @@ export class SearchCriteriaComponent implements OnInit {
   ];
   minDate = '1800-01-01';
   maxDate = '';
+  movieTitle = '';
 
   @Output() userSearch = new EventEmitter<Movie[]>();
 
-  constructor(public service : MovieAPIService) { 
+  constructor(public service: MovieAPIService) {
     this.maxDate = service.getISODateNoTime(new Date());
   }
 
@@ -60,14 +61,50 @@ export class SearchCriteriaComponent implements OnInit {
     let minRating = this.getMinRating();
 
     // selected release dates already handled
-    this.service.getFilteredMovies(this.minDate, this.maxDate, minRating, selectedGenres).subscribe(
+    // Filtering out user-provided movie title
+    if (this.movieTitle === '') {
+      this.service.getFilteredMovies(this.minDate, this.maxDate, minRating, selectedGenres).subscribe(
+        (data: any) => this.searchResults = data.results,
+        err => console.log('Error: ', err),
+        () => this.userSearch.emit(this.searchResults));
+    } else {
+      console.log('Searching...');
+      this.service.searchMovieByName(this.movieTitle).subscribe(
+        (data: any) => this.searchResults = data.results,
+        err => console.log('Error: ', err),
+        () => {
+          if (this.minDate !== '1800-01-01') {
+            this.searchResults = this.searchResults.filter(m => m.releaseDate > this.minDate);
+          }
+          if (this.maxDate !== this.service.getISODateNoTime(new Date())) {
+            this.searchResults = this.searchResults.filter(m => m.releaseDate < this.maxDate);
+          }
+          if (minRating > 0) {
+            this.searchResults = this.searchResults.filter(m => m.rating > minRating);
+          }
+          if (selectedGenres.length > 0) {
+            this.searchResults = this.searchResults.filter(m => {
+              for (const genre of selectedGenres) {
+                if (m.genre_ids.includes(this.service.getGenreId(genre.name))) {
+                  return true;
+                }
+              }
+              return false;
+            });
+          }
+          this.userSearch.emit(this.searchResults);
+        });
+    }
+  }
+
+  titleSearch() {
+    this.service.searchMovieByName(this.movieTitle).subscribe(
       (data: any) => this.searchResults = data.results,
       err => console.log('Error: ', err),
       () => this.userSearch.emit(this.searchResults));
-    
   }
 
-  getMinRating() {
+  getMinRating(): number {
     let minRating: number = 0;
     for (const star of this.ratings) {
       if (star.checked) {
