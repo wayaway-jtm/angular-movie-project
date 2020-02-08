@@ -23,16 +23,7 @@
         <div class="filter-type rating">
           <h1>Rating</h1>
           <div class="star-rating">
-<<<<<<< HEAD
-            <input
-              type="radio"
-              name="rating"
-              *ngFor="let star of ratings"
-              class="star"
-            />
-=======
             <input type="radio" name="rating" *ngFor="let star of ratings" class="star" (change)='checkRating(star.value)' />
->>>>>>> feature/modals
           </div>
         </div>
         <div class="filter-type dates">
