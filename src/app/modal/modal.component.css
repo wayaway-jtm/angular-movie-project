@@ -81,7 +81,7 @@ span {
   text-align: left;
   font-family: "lato", sans-serif;
   color: black;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 400px;
 }
 
@@ -160,18 +160,6 @@ span {
   }
 }
 
-@media (max-width: 823px) {
-  .headDetails {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-  }
-
-  .overview {
-    height: 350px;
-  }
-}
-
 @media (max-width: 750px) {
   .title {
     font-size: 1.5rem;
@@ -238,6 +226,21 @@ span {
   }
 }
 
+/* smart phone only */
+@media (max-width: 360px) {
+    .title {
+      font-size: 1rem;
+    }
+    .length {
+     font-size: 0.6rem;
+    }
+    .date {
+     font-size: 0.6rem;
+    }
+    .genre {
+     font-size: 0.6rem;
+    }
+}
 .ten {
   font-size: 1rem;
   color: gray;
@@ -260,11 +263,10 @@ a {
   color: #fff;
 }
 
-.btn:active {
-  box-shadow: 0px 5px 0px 0px;
-  /*  pressed button effect - using transform  */
-  transform: translate(0px, 5px);
+.btn:hover {
+    color: #df8b8b;
 }
+
 
 .close {
   position: absolute;
