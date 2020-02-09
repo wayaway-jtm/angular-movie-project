@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SearchCriteriaComponent } from './search-criteria.component';
+import { SearchCriteriaComponent } from "./search-criteria.component";
 
-describe('SearchCriteriaComponent', () => {
+describe("SearchCriteriaComponent", () => {
   let component: SearchCriteriaComponent;
   let fixture: ComponentFixture<SearchCriteriaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchCriteriaComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchCriteriaComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('SearchCriteriaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

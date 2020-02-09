@@ -7,7 +7,7 @@ input {
   height: 2rem;
   width: 100%;
   padding-left: 0.5vw;
-  border-radius: 5%;
+  border-radius: 3px;
 }
 
 .searchBar {
@@ -27,6 +27,9 @@ button {
   display: flex;
   flex-direction: column;
 }
+.sideMenu p {
+  margin: 3px;
+}
 
 .buttonContainer {
   align-self: flex-end;
@@ -39,15 +42,6 @@ button {
 .submitButton {
   width: 10px;
   height: 10px;
-}
-
-ul {
-  padding-left: 0;
-  flex-direction: column;
-}
-
-li {
-  list-style-type: none;
 }
 
 .bottomInput {
@@ -67,7 +61,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 50%;
+  width: 100%;
 }
 
 .genreLists {
@@ -79,8 +73,9 @@ li {
 .sidenav {
   height: 60%;
   width: 98%;
+  font-size: 1.5rem;
   border: 3px solid white;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 110px;
   left: 1%;
@@ -133,7 +128,7 @@ label p {
   flex-direction: column;
   align-items: center;
 }
- /* only used on mobile devices */
+/* only used on mobile devices */
 #xBtn {
   display: none;
 }
@@ -166,18 +161,22 @@ label p {
   justify-content: space-around;
   padding: 0;
   text-align: center;
+  border: none;
+  height: 30px;
 }
 
 .star-rating input {
   /* display: none; */
   height: 0px;
+  border: none;
 }
 
 .star-rating input::after {
-  content: '\2605';
+  content: "\2605";
   color: #ccc;
   display: block;
   font-size: 2rem;
+  border: none;
 }
 
 /* .star-rating input:hover::after {
@@ -198,16 +197,18 @@ label p {
   color: #fc0;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 750px) {
   .sidenav a {
     font-size: 18px;
   }
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 768px) {
+  h1 {
+    margin-bottom: -2px;
+  }
   .sidenav {
-    height: 100%;
+    height: 98%;
     width: 98%;
     position: fixed;
     z-index: 1;
@@ -220,7 +221,6 @@ label p {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    align-items: center;
   }
 
   #genreBox {
@@ -232,11 +232,41 @@ label p {
     width: 20%;
     height: 8%;
     font-size: 1.1rem;
+    position: absolute;
   }
   #xBtn {
     display: inline;
     position: absolute;
     top: 3%;
     left: 6%;
+    background-color: black;
+    border: none;
+  }
+  #filter-options {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .genreTypes {
+    width: 100%;
+  }
+
+  .calendar {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .sidenav {
+    height: 100%;
+    font-size: 1rem;
+  }
+  .star-rating {
+    width: 23px;
+  }
+  .calendar {
+    width: 100%;
   }
 }

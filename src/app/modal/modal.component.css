@@ -21,7 +21,7 @@
   height: 85vh;
   color: black;
   border-radius: 20px;
-  border: 1px solid #E84F4F;
+  border: 3px solid #E84F4F;
   background-color: #333333;
   z-index: 1;
 }
@@ -149,12 +149,6 @@ span {
     justify-content: center;
     align-self: center;
   }
-}
-
-@media (max-width: 942px) {
-    .overview {
-        height: 90px;
-    }
 }
 
 @media (max-width: 823px) {

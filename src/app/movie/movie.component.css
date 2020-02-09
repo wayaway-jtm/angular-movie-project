@@ -64,7 +64,7 @@ p {
 }
 
 #movie-poster {
-    width: 60%;
+    width: 100%;
     object-fit: contain;
 }
 
