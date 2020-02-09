@@ -1,5 +1,10 @@
 main {
-width: 560px;
- height: 315px;
-  /* background-color: whitesmoke; */
+  width: fit-content;
+  height: fit-content;
+}
+
+#easterEgg {
+  position: absolute;
+  top: 11%;
+  right: 21%;
 }

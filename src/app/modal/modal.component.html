@@ -1,19 +1,17 @@
 <div id="modal-wrapper">
   <section id="modal-content">
     <div id="details">
-      <a (click)="toggleModal()" class="btn close" >⌽</a>
-      <p class="title"><span id="title">{{ title }}</span> <span id="rating" id="star"> &#9733;{{ rating }}</span><span class="ten">/10</span></p>
+      <a (click)="toggleModal()" class="btn close" ><i class="fas fa-times fa-2x"></i></a>
+      <h1 class="title"><span id="title">{{ title }}</span> <span id="rating" id="star"> &#9733;{{ rating }}</span><span class="ten">/10</span></h1>
+      <p class="overview"><span> {{ overview }}</span></p>
       <section class="headDetails">
         <span class="length">Minutes: {{ length }}</span>
-        <span class="spaces"></span>
         <span class="date">Date: ({{ releaseDate }})</span>
-        <span class="spaces"></span>
-        <span class="genre">Genre: {{ genreNames }}</span>
+        <span class="genre"><p>Genre: {{ genreNames }}</p></span>
       </section>
-      <section class="dec-pic">
+      <!-- <section class="dec-pic">
         <img id="movie-poster" src="{{ posterPath }}" alt=""/>
-      <p class="overview"><span> {{ overview }}</span></p>
-      </section>
+      </section> -->
     </div> 
   </section>
 </div>

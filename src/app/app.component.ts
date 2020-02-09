@@ -15,7 +15,7 @@ export class AppComponent {
   openDialog(): void {
 
    this.dialog.open(EastereggComponent, {
-      width: '50%',    
+      width: '50%',   
     });
     // ref.afterClosed().subscribe(result => {
     //   this.onSubmit(result);

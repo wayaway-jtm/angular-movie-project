@@ -13,6 +13,10 @@
   opacity: 1;
 }
 
+p {
+  margin: 0;
+}
+
 #modal-content {
   position: absolute;
   top: 10%;
@@ -21,29 +25,32 @@
   height: 85vh;
   color: black;
   border-radius: 20px;
-  border: 3px solid #E84F4F;
+  border: 3px solid #e84f4f;
   background-color: #333333;
   z-index: 1;
+  display: flex;
+  flex-direction: row;
 }
 
 #details {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   color: white;
   padding: 10px;
+  font-size: 1.3rem;
 }
 
 img {
-    width: 38%;
+  width: 38%;
 }
 /* tablet */
 @media (max-height: 712px) {
-    img {
-        width: 30%;
-        height: 20%;
-    } 
+  img {
+    width: 30%;
+    height: 20%;
+  }
 }
 
 span {
@@ -55,7 +62,7 @@ span {
   font-size: 2rem;
   padding-top: 10px;
   padding-bottom: 0px;
-  color: #FFF;
+  color: #fff;
   font-family: "lato", sans-serif;
 }
 
@@ -64,8 +71,6 @@ span {
   flex-direction: row;
   align-self: center;
   align-content: center;
-  padding-left: 10px;
-  padding-bottom: 10px;
   font-family: "lato", sans-serif;
 }
 
@@ -74,8 +79,6 @@ span {
   justify-content: center;
   font-size: 1.5rem;
   text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
   font-family: "lato", sans-serif;
   color: black;
   overflow-y: scroll;
@@ -101,25 +104,32 @@ span {
 }
 
 .length {
-  border: 1px solid red;
+  border: 3px solid #e84f4f;
+  background-color: #e84f4f;
   border-radius: 10px;
-  padding: 4px;
+  padding: 6px;
+  margin: 5px;
 }
 
 .date {
-  border: 1px solid red;
+  border: 3px solid #e84f4f;
+  background-color: #e84f4f;
   border-radius: 10px;
-  padding: 4px;
+  padding: 6px;
+  margin: 5px;
 }
 
 .genre {
-  border: 1px solid red;
+  border: 3px solid #e84f4f;
+  background-color: #e84f4f;
   border-radius: 10px;
-  padding: 4px;
+  padding: 6px;
+  margin: 5px;
+  font-size: small;
 }
 
 .spaces {
-  padding: 10px
+  padding: 10px;
 }
 
 .dec-pic {
@@ -129,14 +139,13 @@ span {
 
 @media (max-width: 1046px) {
   .title {
-    font-size: 1.5rem;
-    padding-top: 20px;
+    font-size: 2rem;
   }
 
   .overview {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     text-align: center;
-    height: 150px;
+    height: 200px;
   }
 
   .dec-pic {
@@ -152,57 +161,57 @@ span {
 }
 
 @media (max-width: 823px) {
-    .headDetails {
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-    }
+  .headDetails {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
 
-    .overview {
-        height: 90px;
-    }
+  .overview {
+    height: 350px;
+  }
 }
 
 @media (max-width: 750px) {
-    .title {
-        font-size: 1.5rem;
-        padding-top: 20px;
-    }
-    .overview {
-        font-size: 1rem;
-        height: 130px;
-    }
+  .title {
+    font-size: 1.5rem;
+    padding-top: 20px;
+  }
+  .overview {
+    font-size: 1rem;
+    height: 130px;
+  }
 }
 @media (max-width: 822px) {
-    .headDetails {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    .spaces {
-        padding: 2px;
-    }
+  .headDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .spaces {
+    padding: 2px;
+  }
 }
 
 @media (max-width: 571px) {
   .overview {
     font-size: 1rem;
   }
-  
+
   .genre {
-      font-size: 0.7rem;
+    font-size: 0.7rem;
   }
 }
 
 @media (max-width: 519px) {
-    .headDetails {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    .spaces {
-        padding: 2px;
-    }
+  .headDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .spaces {
+    padding: 2px;
+  }
 }
 
 @media (max-width: 494px) {
@@ -211,22 +220,22 @@ span {
     height: 200px;
   }
 
-    #star {
-        font-size: 1rem;
-    }
-    
-    .genre {
-        display: flex;
-        justify-content: center;
-        line-height: 1.5rem;        
-    }
-    .headDetails {
-        display: flex;
-        justify-content: center;
-        align-self: center;
-        text-align: center;
-        padding-left: 0px;
-    }
+  #star {
+    font-size: 1rem;
+  }
+
+  .genre {
+    display: flex;
+    justify-content: center;
+    line-height: 1.5rem;
+  }
+  .headDetails {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    padding-left: 0px;
+  }
 }
 
 .ten {
@@ -258,14 +267,11 @@ a {
 }
 
 .close {
-  background-color: #cc2e2e;
-  box-shadow: 0px 5px 0px 0px #ce5050;
+  position: absolute;
+  top: 0;
   width: 10px;
   height: 10px;
   align-items: center;
   justify-content: center;
-}
-
-.close:hover {
-  background-color: rgb(235, 109, 109);
+  color: #e84f4f;
 }
