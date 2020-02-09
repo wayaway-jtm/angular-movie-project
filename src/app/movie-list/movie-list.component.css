@@ -21,6 +21,7 @@ margin: 0px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .grid-item {

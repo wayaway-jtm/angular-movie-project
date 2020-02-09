@@ -1,3 +1,7 @@
+.hideModal {
+    display: none;
+}
+
 #wrapper {
     display: flex;
     justify-content: space-around;

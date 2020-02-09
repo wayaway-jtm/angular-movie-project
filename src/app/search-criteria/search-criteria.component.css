@@ -54,6 +54,10 @@ li {
   padding-bottom: 55px;
 }
 
+#search-icon {
+  height: inherit;
+}
+
 .calendar {
   width: 60%;
   text-align: center;

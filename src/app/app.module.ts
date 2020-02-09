@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 
 
@@ -12,6 +13,8 @@ import { WatchlistPageComponent } from './watchlist-page/watchlist-page.componen
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { ModalComponent } from './modal/modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EastereggComponent } from './easteregg/easteregg.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,19 @@ import { ModalComponent } from './modal/modal.component';
     WatchlistPageComponent,
     HomeComponent,
     MovieComponent,
-    ModalComponent
+    ModalComponent,
+    EastereggComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
     FormsModule
+  ],
+  entryComponents: [
+    EastereggComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
