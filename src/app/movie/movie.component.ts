@@ -9,7 +9,8 @@ import { isUndefined } from 'util';
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  styleUrls: ['./movie.component.css'],
+  animations: []
 })
 export class MovieComponent implements OnInit {
   title: string;

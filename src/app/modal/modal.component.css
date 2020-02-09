@@ -40,13 +40,13 @@ p {
 }
 
 img {
-  width: 38%;
+  width: 24%;
 }
-/* tablet */
-@media (max-height: 712px) {
+
+@media screen and (max-width: 1023px) {
   img {
-    width: 30%;
-    height: 20%;
+    display: none;
+    width: 0%; 
   }
 }
 
@@ -145,13 +145,7 @@ span {
 
   .dec-pic {
     display: flex;
-    flex-direction: column;
-  }
-
-  img {
-    display: flex;
-    justify-content: center;
-    align-self: center;
+    flex-direction: row;
   }
 }
 
@@ -160,10 +154,6 @@ span {
     display: flex;
     flex-direction: row;
     text-align: center;
-  }
-
-  .overview {
-    height: 350px;
   }
 }
 
