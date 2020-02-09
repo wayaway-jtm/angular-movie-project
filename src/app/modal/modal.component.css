@@ -23,8 +23,8 @@ p {
   height: 75vh;
   color: black;
   border-radius: 20px;
-  border: 3px solid #e84f4f;
-  background-color: #333333;
+  /* border: 3px solid #e84f4f; */
+  /* background-color: #333333; */
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -40,13 +40,17 @@ p {
 }
 
 img {
-  width: 24%;
+  width: 35%;
+  padding: 15px;
 }
 
 @media screen and (max-width: 1023px) {
   img {
     display: none;
     width: 0%; 
+  }
+  .close {
+    top: -25px;
   }
 }
 
@@ -252,9 +256,7 @@ a {
 
 .close {
   position: absolute;
-  top: 0;
-  width: 10px;
-  height: 10px;
+  top: -22%;
   align-items: center;
   justify-content: center;
   color: #e84f4f;
