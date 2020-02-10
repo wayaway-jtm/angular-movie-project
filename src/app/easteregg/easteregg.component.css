@@ -4,7 +4,7 @@ main {
 }
 
 #easterEgg {
-  position: absolute;
+  position: fixed;
   top: 11%;
   right: 21%;
 }
