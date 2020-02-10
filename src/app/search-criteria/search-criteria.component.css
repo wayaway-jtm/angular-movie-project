@@ -71,15 +71,18 @@ button {
 
 /* The sidebar menu */
 .sidenav {
-  height: 60%;
-  width: 98%;
+  /* height: 60%; */
+  width: 96%;
   font-size: 1.5rem;
   border: 3px solid white;
   position: absolute;
+  padding: 10px;
   z-index: 1;
   top: 110px;
   left: 1%;
   background-color: black;
+  /* background: rgba(0, 0, 0, 0.8);
+  transition: opacity 100ms ease-in; */
   color: #ffd983;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -105,7 +108,7 @@ button {
 }
 
 label {
-  width: 50%;
+  width: fit-content;
 }
 
 label p {
@@ -130,7 +133,7 @@ label p {
 }
 /* only used on mobile devices */
 #xBtn {
-  display: none;
+  background-color: transparent;
 }
 
 /* The navigation menu links */
@@ -208,13 +211,16 @@ label p {
     margin-bottom: -2px;
   }
   .sidenav {
-    height: 98%;
-    width: 98%;
+    height: 100%;
+    width: 100%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: black;
+    border: none;
+    /* background-color: black; */
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 100ms ease-in;
     color: #ffd983;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -239,7 +245,6 @@ label p {
     position: absolute;
     top: 3%;
     left: 6%;
-    background-color: black;
     border: none;
   }
   #filter-options {
@@ -263,6 +268,7 @@ label p {
   .sidenav {
     height: 100%;
     font-size: 1rem;
+    border: none;
   }
   .star-rating {
     width: 23px;
