@@ -4,7 +4,7 @@ import { MovieAPIService } from '../movie-api.service';
 
 import { Movie } from './movie.class';
 import { WatchlistService } from '../watchlist.service';
-import { isUndefined } from 'util';
+import { isUndefined, isNull } from 'util';
 
 @Component({
   selector: 'app-movie',

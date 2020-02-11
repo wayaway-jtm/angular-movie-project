@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { isUndefined } from 'util';
+import { isUndefined, isNull } from 'util';
 
 @Injectable({
   providedIn: "root"
@@ -132,8 +132,12 @@ export class MovieAPIService {
   }
 
   getPosterPath(movie: any): string {
-    if (isUndefined(movie.posterPath)) {
-      return this.getPosterSrc(movie.poster_path);
+    if (isUndefined(movie.posterPath) || isNull(movie.posterPath)) {
+      if (isUndefined(movie.poster_path) || isNull(movie.poster_path)) {
+        return "../assets/no-poster.png";
+      } else {
+        return this.getPosterSrc(movie.poster_path);
+      }
     } else {
       return this.getPosterSrc(movie.posterPath);
     }

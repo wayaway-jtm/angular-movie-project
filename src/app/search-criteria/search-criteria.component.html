@@ -14,7 +14,7 @@
         <div id="genreBox" class="filter-type genre">
           <h1>Genre</h1>
           <div class="genreTypes">
-            <label *ngFor="let genre of genres">
+            <label *ngFor="let genre of genres" class="genre-display">
               <p>{{ genre.name }}</p>
               <input type="checkbox" [(ngModel)]="genre.checked" />
             </label>
@@ -23,7 +23,8 @@
         <div class="filter-type rating">
           <h1>Rating</h1>
           <div class="star-rating">
-            <input type="radio" name="rating" *ngFor="let star of ratings" class="star" (change)='checkRating(star.value)' />
+            <input type="radio" name="rating" *ngFor="let star of ratings" class="star"
+              (change)='checkRating(star.value)' />
           </div>
         </div>
         <div class="filter-type dates">
@@ -38,8 +39,8 @@
       <button id="filterBtn" (click)="filter()">Filter</button>
     </div>
   </div>
-  <input type="text" placeholder="Movie Title" [(ngModel)]="movieTitle" />
-  <button type="button" (click)="titleSearch()" >
+  <input type="text" placeholder="Movie Title" [(ngModel)]="movieTitle" (keyup.enter)="titleSearch()" />
+  <button type="button" (click)="titleSearch()">
     <img src="../../assets/magnifying-glass.png" alt="Search" id="search-icon">
   </button>
 </div>
