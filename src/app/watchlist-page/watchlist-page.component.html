@@ -2,7 +2,7 @@
 <header>
   <ul>
     <li><a [routerLink]="['/home']" routerLinkActive="router-link-active"><img class="kernel-logo"
-      src="/assets/kernel-logo.png"></a></li>
+      src="./assets/kernel-logo.png"></a></li>
 
   </ul>
 
@@ -20,7 +20,7 @@
 
 <main>
   <div class="watchlist-container">
-    <movie-list [movieList]='watchlistService.getSavedMovies()'></movie-list>
+    <movie-list [movieList]='getSavedMovies()'></movie-list>
   </div>
 </main>
 </body>

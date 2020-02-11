@@ -14,4 +14,8 @@ export class WatchlistPageComponent implements OnInit {
     
   }
 
+  getSavedMovies() {
+    return this.watchlistService.getSavedMovies();
+  }
+
 }
